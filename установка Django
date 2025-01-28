@@ -1,0 +1,103 @@
+Установка и настройка DJANGO
+
+Установить и активировать виртуальное окружениеpip или poetry
+
+установить пакеты
+
+
+poetry add python-dotenv
+poetry add django
+
+Инициализация проекта
+
+django-admin startproject config .
+
+
+
+
+
+
+файл  settings.py
+
+from dotenv import load_dotenv
+# Загрузка переменных из .env-файла
+load_dotenv()
+SQL_HOST = os.getenv("SQL_HOST")
+SQL_DATABASE = os.getenv("SQL_DATABASE")
+SQL_USER = os.getenv("SQL_USER")
+SQL_PASS = os.getenv("SQL_PASS")
+SQL_PORT = os.getenv("SQL_PORT")
+
+######################
+LANGUAGE_CODE = 'ru-ru'
+
+TIME_ZONE = 'Europe/Moscow'
+#############################
+# Database for postrges
+# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': SQL_DATABASE,
+        'USER': SQL_USER,
+        'PASSWORD': SQL_PASS,
+        'HOST': SQL_HOST,
+        'PORT': SQL_PORT,
+    }
+}
+#####################
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [ BASE_DIR / 'static']
+
+import os
+# пути для хранения медиафайлов:
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+###################
+
+
+файл .env
+
+SQL_HOST = "localhost"
+SQL_DATABASE = "catalog_shop"
+SQL_USER = "user_catalog"
+SQL_PASS = "54321"
+SQL_PORT = 5432
+
+SCRT_KEY = "pz%q8jm1wu11i-%gdx_)-o%1m40i2yrwpgqy6qav=8#*ejcklv"
+
+.env
+
+path('', include('catalog.urls', namespace='catalog')),
+
+
+создать базу (если не создана) в слонике(в paAdmin4)
+# CREATE database catalog_shop;
+# CREATE USER user_catalog WITH PASSWORD '987654321';
+# ALTER DATABASE catalog_shop OWNER TO user_catalog;
+
+удалить файл db.sqlite3
+
+
+Регистрация приложения в проекте
+
+python manage.py startapp имя_приложения
+
+файл  settings.py
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "имя_приложения",
+]
+
+
+
+Запуск сервера разработки:
+python manage.py runserver
