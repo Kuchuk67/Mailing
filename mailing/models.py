@@ -1,3 +1,4 @@
+from msilib import add_data
 from multiprocessing.connection import Client
 
 from django.db import models
@@ -8,7 +9,7 @@ class ClientName(models.Model):
     email = models.CharField(max_length=150, verbose_name="email клиента")
     name = models.CharField(max_length=150, verbose_name="Фамилия Имя Отчество")
     description  = models.TextField(verbose_name="Комментарий", null=True, blank=True,)
-    unsubscribe = models.IntegerField(default=None, verbose_name="Отписка")
+    unsubscribe = models.IntegerField( default=None, null=True, blank=True, editable=False,  verbose_name="Отписка")
 
     def __str__(self):
         return f"{self.name} - {self.email}"
@@ -30,10 +31,11 @@ class Message(models.Model):
 
     class Meta:
         verbose_name = 'Сообщение'
-        verbose_name_plural = 'Сообщении'
+        verbose_name_plural = 'Сообщения'
         ordering = ['-created_at']
 
 class Task(models.Model):
+    name = models.CharField(max_length=150, verbose_name="имя задачи")
     start_at = models.DateTimeField(verbose_name="время начала рассылки")
     end_at = models.DateTimeField(verbose_name="время завершения рассылки")
     STATUS_CHOICES = [
@@ -51,7 +53,7 @@ class Task(models.Model):
     class Meta:
         verbose_name = 'Задача'
         verbose_name_plural = 'Задачи'
-        ordering = ['-created_at']
+        ordering = ['-start_at']
 
 class EmailForSend(models.Model):
     task = models.ForeignKey(Task,  on_delete=models.CASCADE, related_name="tasks")

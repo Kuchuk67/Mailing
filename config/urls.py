@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pexpect import spawn
+#from pexpect import spawn
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mailing/',include('mailing',namespace='mailing'))
+    path('mailing/',include('mailing.urls',namespace='mailing'))
 ]
 

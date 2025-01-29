@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% include 'menu.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Client Name List</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Клиент</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <td><a href="">{{ client.name }}</a></td>
+                        <td>{{ client.email }}</td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

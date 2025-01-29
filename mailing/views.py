@@ -13,6 +13,7 @@ class ClientNameListView(ListView):
     model = ClientName
     context_object_name = 'clients'
     paginate_by = 25
+    template_name = 'mailing/client/clientname_list.html'
 
 
 class ClientNameDetailsView(DetailView):
