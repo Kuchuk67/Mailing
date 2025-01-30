@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% include 'menu.html' %}
+
+<div class="p-4">
+<div class="id_client"> ID: {{ client.id }}  </div>
+<div class="info_client">Получатель:  {{ client.name }} - {{ client.email }} </div>
+{% if client.unsubscribe %}
+<div class="unsubscribe_client"> ОТПИСКА  </div>
+{% endif %}
+<div class="description_client">Комментарий: {{ client.description }} </div>
+</div>
+
+
+<div class="p-4">
+<a class="btn btn-primary" href="{% url 'mailing:client_edit' client.id %} ">Редактировать</a>
+<a class="btn btn-danger" href="{% url 'mailing:client_delete' client.id %} ">Удалить</a>
+<a class="btn btn-primary" href="{% url 'mailing:clients' %} ">Отмена</a>
+</div>
+
+{% endblock %}

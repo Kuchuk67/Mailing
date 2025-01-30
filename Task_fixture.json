@@ -1,0 +1,13 @@
+[
+{
+    "model": "mailing.task",
+    "pk": 1,
+    "fields": {
+        "name": "Первая рассылка",
+        "start_at": "2025-01-23T19:53:25Z",
+        "end_at": "2025-01-30T19:53:32Z",
+        "status": "stop",
+        "message": 1
+    }
+}
+]

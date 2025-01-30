@@ -7,9 +7,10 @@ app_name = 'mailing'
 urlpatterns = [
     # Получатели рассылки - Клиенты
     path('client/', views.ClientNameListView.as_view(), name='clients'),
-    path('client/<int:pk>', views.ClientNameListView.as_view(), name='client_details'),
-    path('client/<int:pk>/edit', views.ClientNameListView.as_view(), name='client_edit'),
-    path('client/<int:pk>/delete', views.ClientNameListView.as_view(), name='client_delete'),
+    #path('client/<int:pk>', views.ClientNameDetailsView.as_view(), name='client_details'),
+    path('client/create', views.ClientNameCreateView.as_view(), name='client_create'),
+    path('client/<int:pk>', views.ClientNameUpdateView.as_view(), name='client_edit'),
+    path('client/<int:pk>/delete', views.ClientNameDeleteView.as_view(), name='client_delete'),
 
     # Отписка от рассылок
     path('unsubscribe/', views.UnsubscribeDetailView.as_view(), name='unsubscribe'),

@@ -12,13 +12,14 @@ from django.shortcuts import render
 class ClientNameListView(ListView):
     model = ClientName
     context_object_name = 'clients'
-    paginate_by = 25
+    paginate_by = 12
     template_name = 'mailing/client/clientname_list.html'
 
 
-class ClientNameDetailsView(DetailView):
+"""class ClientNameDetailsView(DetailView):
     model = ClientName
     context_object_name = 'client'
+    template_name = 'mailing/client/clientname_detail.html'"""
 
 
 class ClientNameCreateView(CreateView):
@@ -38,7 +39,7 @@ class ClientNameDeleteView(DeleteView):
     success_url = reverse_lazy('mailing:clients')
 
 
-class UnsubscribeDetailView(DeleteView):
+class UnsubscribeDetailView(DetailView):
     model = ClientName
     context_object_name = 'client'
 
