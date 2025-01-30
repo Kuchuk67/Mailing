@@ -12,8 +12,12 @@
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
+                {{ client.description }}
                 <button type="submit" class="btn btn-primary">Сохранить</button>
                 <a href="{% url 'mailing:clients' %}" class="btn btn-secondary">Отмена</a>
+                {% if client.id %}
+                <a class="btn btn-danger" href="{% url 'mailing:client_delete' client.id %} ">Удалить</a>
+                {% endif %}
             </form>
         </div>
 

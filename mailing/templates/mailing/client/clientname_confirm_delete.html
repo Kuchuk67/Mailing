@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% include 'menu.html' %}
+
+<div class="p-4">
+<div class="id_client"> ID: {{ client.id }}  </div>
+<div class="info_client">Получатель:  {{ client.name }} - {{ client.email }} </div>
+{% if client.unsubscribe %}
+<div class="unsubscribe_client"> ОТПИСКА  </div>
+{% endif %}
+<div class="description_client">Комментарий: {{ client.description }} </div>
+</div>
+
+
+<div class="p-4">
+Точно хотите удалить запись?
+    <form method="POST">
+                    {% csrf_token %}
+                <p>Действительно удалить {{ product.name }}</p>
+                <button type="submit" class="btn btn-primary">Удалить</button>
+                <a href="{% url 'mailing:clients' %}" class="btn btn-secondary">Отмена</a>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -24,19 +24,28 @@ class ClientNameListView(ListView):
 
 class ClientNameCreateView(CreateView):
     model = ClientName
-    fields = ['email',  'name',  'description',  'unsubscribe',]
+    fields = ['email',  'name',  'description', ]
     success_url = reverse_lazy('mailing:clients')
+    template_name = 'mailing/client/clientname_form.html'
 
 
 class ClientNameUpdateView(UpdateView):
     model = ClientName
-    fields = ['email',  'name',  'description',  'unsubscribe',]
-    success_url = reverse_lazy('mailing:client_details')
+    context_object_name = 'client'
+    template_name = 'mailing/client/clientname_form.html'
+    fields = ['email',  'name',  'description']
+    success_url = reverse_lazy('mailing:clients')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Редактирование клиента'
+        return context
 
 
 class ClientNameDeleteView(DeleteView):
     model = ClientName
+    context_object_name = 'client'
     success_url = reverse_lazy('mailing:clients')
+    template_name = 'mailing/client/clientname_confirm_delete.html'
 
 
 class UnsubscribeDetailView(DetailView):
