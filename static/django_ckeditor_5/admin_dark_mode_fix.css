@@ -1,0 +1,5 @@
+.ck.ck-editor {
+color: black !important;
+}
+
+.ck-toolbar__items{flex-wrap: wrap !important;}

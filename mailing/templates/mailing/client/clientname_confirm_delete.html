@@ -14,10 +14,10 @@
 
 
 <div class="p-4">
-Точно хотите удалить запись?
     <form method="POST">
                     {% csrf_token %}
-                <p>Действительно удалить {{ product.name }}</p>
+                 <p style="color: red">Точно хотите удалить запись: <b>{{ client.name }} </b></p>
+
                 <button type="submit" class="btn btn-primary">Удалить</button>
                 <a href="{% url 'mailing:clients' %}" class="btn btn-secondary">Отмена</a>
     </form>

@@ -14,13 +14,13 @@
         <div class="d-flex justify-content-center">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-
+                {{ form.media }}
                 {{ form.as_p }}
 
                 <button type="submit" class="btn btn-primary">Сохранить</button>
-                <a href="{% url 'mailing:clients' %}" class="btn btn-secondary">Отмена</a>
-                {% if client.id %}
-                <a class="btn btn-danger" href="{% url 'mailing:client_delete' client.id %} ">Удалить</a>
+                <a href="{% url 'mailing:messages' %}" class="btn btn-secondary">Отмена</a>
+                {% if message.id %}
+                <a class="btn btn-danger" href="{% url 'mailing:message_delete' message.id %} ">Удалить</a>
                 {% endif %}
             </form>
         </div>

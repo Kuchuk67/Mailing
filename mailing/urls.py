@@ -17,9 +17,10 @@ urlpatterns = [
 
     # Тексты сообщений для рассылок
     path('message/', views.MessageListView.as_view(), name='messages'),
-    path('message/<int:pk>', views.MessageListView.as_view(), name='message_details'),
-    path('message/<int:pk>/edit', views.MessageListView.as_view(), name='message_edit'),
-    path('message/<int:pk>/delete', views.MessageListView.as_view(), name='message_delete'),
+    path('message/create', views.MessageCreateView.as_view(), name='message_create'),
+    path('message/<int:pk>', views.MessageUpdateView.as_view(), name='message_edit'),
+    #path('message/<int:pk>/edit', views.MessageListView.as_view(), name='message_edit'),
+    path('message/<int:pk>/delete', views.MessageDeleteView.as_view(), name='message_delete'),
 
     # Планирование рассылок - Задачи
     path('task/', views.TaskListView.as_view(), name='tasks'),

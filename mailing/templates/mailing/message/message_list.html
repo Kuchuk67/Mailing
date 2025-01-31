@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% include 'menu.html' %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Тексты рассылок</h1>
+                    <a class="btn btn-primary" href="{% url 'mailing:message_create' %} ">Добавить</a>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Тема</th>
+                                <th>Дата создания</th>
+                                <th>Дата изменения</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% include 'pagination.html' %}
+                            {% for message in messages %}
+                            <tr>
+                                <td><a href="{{ message.id }}">{{ message.title_mail }}</a></td>
+                                <td>{{ message.created_at | date:"d M Y" }}</td>
+                                <td>{{ message.updated_at | date:"d M Y" }}</td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                 </div>
+            </div>
+
+        </div>
+    {% endblock %}
