@@ -3,6 +3,7 @@ from multiprocessing.connection import Client
 
 from django.db import models
 from django.core.management.utils import get_random_secret_key
+from django_ckeditor_5.fields import CKEditor5Field
 
 # Create your models here.
 class ClientName(models.Model):
@@ -22,7 +23,7 @@ class ClientName(models.Model):
 
 class Message(models.Model):
     title_mail = models.CharField(max_length=150, verbose_name="Тема письма")
-    text_mail = models.TextField(verbose_name="Текст mail")
+    text_mail =  CKEditor5Field(verbose_name='Текст mail', config_name='extends')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="дата последнего изменения")
 
