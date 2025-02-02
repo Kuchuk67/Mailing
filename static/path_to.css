@@ -1,3 +1,5 @@
 .ck-content{background: var(--darkened-bg) !important;
 }
 .ck-toolbar__items{flex-wrap: wrap !important;}
+
+#id_title_mail {font-size:26pt; width: 100%;}

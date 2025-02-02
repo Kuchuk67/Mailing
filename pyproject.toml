@@ -11,6 +11,7 @@ python = "^3.12"
 django = "^5.1.5"
 python-dotenv = "^1.0.1"
 django-ckeditor-5 = "^0.2.15"
+psycopg2 = "^2.9.10"
 
 [build-system]
 requires = ["poetry-core"]

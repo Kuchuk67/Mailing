@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from mailing.models import ClientName, Message, Task
-from mailing.views import TaskListView
+#from mailing.views import TaskListView
 
 
 # Register your models here.
