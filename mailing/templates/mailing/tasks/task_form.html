@@ -5,18 +5,30 @@
     {% include 'menu.html' %}
 
 <div class="fon">
-    <div class=" container-lg">
+    <div class=" container-lg d-flex ">
 
-        <div class="title">
-            <h1>{{ title }}</h1>
 
-        </div>
-        <div class="d-flex justify-content-center">
+
+
+        <div class="col-md-6 p-3 d-flex justify-content-center">
             <form method="POST" enctype="multipart/form-data">
+
                 {% csrf_token %}
-
-                {{ form.as_p }}
-
+                <div class="p-3">Имя задачи:
+                <h1>{{ form.name }}</h1>
+                </div>
+                <div class="p-3">Дата запуска:
+                {{ form.start_at }}
+                </div>
+                <div class="p-3">Дата завершения:
+                {{ form.end_at }}
+                </div>
+                <div class="p-3">Статус:
+                {{ form.status }}
+                </div>
+                <div class="p-3">Текст:
+                {{ form.message }}
+                </div>
 
 
                 <button type="submit" class="btn btn-primary">Сохранить</button>
@@ -26,11 +38,15 @@
                 {% endif %}
             </form>
         </div>
+        <div class="col-md-6 p-3 border">
+            <h3>Текст рассылки</h3>
+            <hr />
+                    {{ object.message.text_mail | safe }}
 
+        </div>
 
-
+        </div>
 
     </div>
-</div>
 
 {% endblock %}

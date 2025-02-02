@@ -1,6 +1,8 @@
 
 from django.urls import path
 from mailing import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 app_name = 'mailing'
 
@@ -27,7 +29,10 @@ urlpatterns = [
     path('task/<int:pk>', views.TaskUpdateView.as_view(), name='task_edit'),
     path('task/<int:pk>/delete', views.TaskDeleteView.as_view(), name='task_delete'),
 
-
+    path('', views.ClientNameListView.as_view(), name='clients'),
 
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
