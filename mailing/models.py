@@ -1,9 +1,7 @@
-from msilib import add_data
-from multiprocessing.connection import Client
-
 from django.db import models
 from django.core.management.utils import get_random_secret_key
 from django_ckeditor_5.fields import CKEditor5Field
+
 
 # Create your models here.
 class ClientName(models.Model):

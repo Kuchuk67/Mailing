@@ -12,7 +12,7 @@
 
         </div>
         <div class="d-flex justify-content-center">
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" style="width: 100%;">
                 {% csrf_token %}
                 {{ form.media }}
                 {{ form.as_p }}

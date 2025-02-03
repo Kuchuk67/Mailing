@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task
 from django.views.generic import ListView, DetailView
-from ..forms import NewDataForm, EventForm
+from ..forms import NewDataForm
 
 
 
