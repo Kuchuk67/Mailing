@@ -19,8 +19,8 @@
 
                 <button type="submit" class="btn btn-primary">Сохранить</button>
                 <a href="{% url 'mailing:clients' %}" class="btn btn-secondary">Отмена</a>
-                {% if client.id %}
-                <a class="btn btn-danger" href="{% url 'mailing:client_delete' client.id %} ">Удалить</a>
+                {% if client.pk %}
+                <a class="btn btn-danger" href="{% url 'mailing:client_delete' client.pk %} ">Удалить</a>
                 {% endif %}
             </form>
         </div>
@@ -31,4 +31,3 @@
     </div>
 </div>
 
-{% endblock %}

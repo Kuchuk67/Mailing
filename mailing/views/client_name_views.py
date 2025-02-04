@@ -2,7 +2,9 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task
 from django.views.generic import ListView, DetailView
-from ..forms import ClientNameForm
+from django.views import View
+from ..forms import ClientNameForm, DeleteObjectForm
+from django.shortcuts import redirect, render
 
 class ClientNameListView(ListView):
     model = ClientName
@@ -49,3 +51,32 @@ class ClientNameDeleteView(DeleteView):
 class UnsubscribeDetailView(DetailView):
     model = ClientName
     context_object_name = 'client'
+
+class DeleteAllClientView(View):
+    def post(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            form = DeleteObjectForm(request.POST)
+            if form.is_valid():
+                # Удаляем все объекты модели
+                ClientName.objects.all().delete()
+                #form.instance.delete()
+                # Перенаправляем пользователя на другую страницу после удаления
+                return redirect('mailing:clients')
+        else:
+            form = DeleteObjectForm()
+            template_name = 'mailing/client/clientname_confirm_delete.html'
+        #return render(request, 'mailing/client/clientname_confirm.html', {'form': 'form'})
+    def get(self, request, *args, **kwargs):
+        return render(request, 'mailing/client/clientname_confirm.html')
+
+from ..src.client_to import ClientTo
+
+class ClientNameInsert(View):
+    def get(self, request, *args, **kwargs):
+        json_mail = ClientTo()
+        json_mail.insert_clients()
+        #return json_mail.count_all, json_mail.count_error
+
+        return render(request, 'mailing/client/clientname_insert_report.html',
+                      {'count_all': json_mail.count_all, 'count_error': json_mail.count_error} )
+

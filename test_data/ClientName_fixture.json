@@ -1,27 +1,218 @@
 [
-{"model": "mailing.clientname","pk": 1,"fields":{"name": "АГАФОНОВ Андрей Юрьевич ", "email": "agafonov.ayu@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 2,"fields":{"name": "АКУЛОВ Сергей Анатольевич ", "email": "akulov.sa@ssau.ru", "description": "", "unsubscribe": null} },
-{"model": "mailing.clientname","pk": 1,"fields":{"name": "АЛЕКСЕЕВ Алексей Владимирович", "email": "alekseev.av@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 3,"fields":{"name": "АНИСИМОВ Михаил Юрьевич ", "email": "anisimov.myu@ssau.ru", "description": "", "unsubscribe": null} },
-{"model": "mailing.clientname","pk": 4,"fields":{"name": "АНОСОВА Лариса Николаевна ", "email": "anosova.ln@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 5,"fields":{"name": "АНТИПОВ Дмитрий Вячеславович", "email": "antipov.dv@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 6,"fields":{"name": "АНТОНЕВИЧ Андрей Николаевич ", "email": "antan@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 7,"fields":{"name": "АНЧИКОВА Юлия Юрьевна ", "email": " anchikova.yuyu@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 8,"fields":{"name": "АРЖАНОВ Алексей Павлович ", "email": "arjanov.ap@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 9,"fields":{"name": "АСЛАНОВ Владимир Степанович ", "email": " aslanov@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 10,"fields":{"name": "АСМОЛОВА Ирина Михайловна ", "email": " asmolova.im@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 11,"fields":{"name": "АСТАШКИН Сергей Владимирович ", "email": " astashkin.sv@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 12,"fields":{"name": "БАДЫКОВ Ренат Раисович ", "email": " badykov.rr@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 13,"fields":{"name": "БАЛАБАЕВА Юлия Валерьевна ", "email": "balabaeva.yuv@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 14,"fields":{"name": "БАЛЯКИН Валерий Борисович", "email": " balyakin.vb@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 15,"fields":{"name": "БАРАШКИНА Елена Александровна ", "email": "barashkina.ea@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 16,"fields":{"name": "БАТРОВ Владимир Геннадьевич ", "email": " batrov.vg@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 17,"fields":{"name": "БЕЗВЕРХОВ Артур Геннадьевич", "email": "bezverkhov.ag@ssau.ru", "description": "", "unsubscribe": null} },
-{"model": "mailing.clientname","pk": 18,"fields":{"name": "БЕЗРУКОВА Анна Андреевна ", "email": " bezrukova.aa@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 19,"fields":{"name": "БЕЗРУКОВА Елена Викторовна ", "email": "bezrukova.ev@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 20,"fields":{"name": "БЕЛИНСКАЯ Марина Николаевна ", "email": "belinskaya.mn@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 21,"fields":{"name": "БЕЛОКОНОВ Игорь Витальевич ", "email": " belokonov.iv@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 22,"fields":{"name": "БЕЛОУСОВ Андрей Григорьевич ", "email": " belousov.ag@ssau.ru", "description": "", "unsubscribe": null} },
-{"model": "mailing.clientname","pk": 23,"fields":{"name": "БЕРЕЗИНА Анна Григорьевна ", "email": " berezina.ag@ssau.ru", "description": "", "unsubscribe": null }},
-{"model": "mailing.clientname","pk": 24,"fields":{"name": "БИБАЕВА Екатерина Ивановна ", "email": " bibaeva.ei@ssau.ru", "description": "", "unsubscribe": null }}
+{
+    "model": "mailing.clientname",
+    "pk": " anchikova.yuyu@ssau.ru",
+    "fields": {
+        "name": "АНЧИКОВА Юлия Юрьевна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " aslanov@ssau.ru",
+    "fields": {
+        "name": "АСЛАНОВ Владимир Степанович ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " asmolova.im@ssau.ru",
+    "fields": {
+        "name": "АСМОЛОВА Ирина Михайловна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " astashkin.sv@ssau.ru",
+    "fields": {
+        "name": "АСТАШКИН Сергей Владимирович ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " badykov.rr@ssau.ru",
+    "fields": {
+        "name": "БАДЫКОВ Ренат Раисович ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " balyakin.vb@ssau.ru",
+    "fields": {
+        "name": "БАЛЯКИН Валерий Борисович",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " batrov.vg@ssau.ru",
+    "fields": {
+        "name": "БАТРОВ Владимир Геннадьевич ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " belokonov.iv@ssau.ru",
+    "fields": {
+        "name": "БЕЛОКОНОВ Игорь Витальевич ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " belousov.ag@ssau.ru",
+    "fields": {
+        "name": "БЕЛОУСОВ Андрей Григорьевич ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " berezina.ag@ssau.ru",
+    "fields": {
+        "name": "БЕРЕЗИНА Анна Григорьевна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " bezrukova.aa@ssau.ru",
+    "fields": {
+        "name": "БЕЗРУКОВА Анна Андреевна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": " bibaeva.ei@ssau.ru",
+    "fields": {
+        "name": "БИБАЕВА Екатерина Ивановна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "akulov.sa@ssau.ru",
+    "fields": {
+        "name": "АКУЛОВ Сергей Анатольевич ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "alekseev.av@ssau.ru",
+    "fields": {
+        "name": "АЛЕКСЕЕВ Алексей Владимирович",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "anisimov.myu@ssau.ru",
+    "fields": {
+        "name": "АНИСИМОВ Михаил Юрьевич ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "anosova.ln@ssau.ru",
+    "fields": {
+        "name": "АНОСОВА Лариса Николаевна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "antan@ssau.ru",
+    "fields": {
+        "name": "АНТОНЕВИЧ Андрей Николаевич ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "antipov.dv@ssau.ru",
+    "fields": {
+        "name": "АНТИПОВ Дмитрий Вячеславович",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "arjanov.ap@ssau.ru",
+    "fields": {
+        "name": "АРЖАНОВ Алексей Павлович ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "balabaeva.yuv@ssau.ru",
+    "fields": {
+        "name": "БАЛАБАЕВА Юлия Валерьевна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "barashkina.ea@ssau.ru",
+    "fields": {
+        "name": "БАРАШКИНА Елена Александровна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "belinskaya.mn@ssau.ru",
+    "fields": {
+        "name": "БЕЛИНСКАЯ Марина Николаевна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "bezrukova.ev@ssau.ru",
+    "fields": {
+        "name": "БЕЗРУКОВА Елена Викторовна ",
+        "description": "",
+        "unsubscribe": null
+    }
+},
+{
+    "model": "mailing.clientname",
+    "pk": "bezverkhov.ag@ssau.ru",
+    "fields": {
+        "name": "БЕЗВЕРХОВ Артур Геннадьевич",
+        "description": "",
+        "unsubscribe": null
+    }
+}
 ]

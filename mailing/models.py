@@ -45,6 +45,8 @@ class Task(models.Model):
     ]
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='stop', verbose_name='Статус')
     message = models.ForeignKey(Message, on_delete=models.CASCADE, related_name="message", verbose_name='Текст сообщения')
+    client_emails = models.ManyToManyField(ClientName, through="EmailForSend")
+
 
     def __str__(self):
         return f"{self.start_at} - {self.status}"
@@ -55,9 +57,9 @@ class Task(models.Model):
         ordering = ['-start_at']
 
 class EmailForSend(models.Model):
-    task = models.ForeignKey(Task,  on_delete=models.CASCADE, related_name="tasks")
-    client = models.ForeignKey(ClientName,  on_delete=models.CASCADE, related_name="clients")
-    token = models.CharField( max_length=50, default=get_random_secret_key() )
+    task = models.ForeignKey(Task,  on_delete=models.CASCADE)
+    client = models.ForeignKey(ClientName,  on_delete=models.CASCADE)
+    token = models.CharField( max_length=50)
 
     def __str__(self):
         return {self.client}

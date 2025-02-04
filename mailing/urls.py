@@ -11,8 +11,10 @@ urlpatterns = [
     path('client/', views.ClientNameListView.as_view(), name='clients'),
     #path('client/<int:pk>', views.ClientNameDetailsView.as_view(), name='client_details'),
     path('client/create', views.ClientNameCreateView.as_view(), name='client_create'),
-    path('client/<int:pk>', views.ClientNameUpdateView.as_view(), name='client_edit'),
-    path('client/<int:pk>/delete', views.ClientNameDeleteView.as_view(), name='client_delete'),
+    path('client/<str:pk>', views.ClientNameUpdateView.as_view(), name='client_edit'),
+    path('client/<str:pk>/delete', views.ClientNameDeleteView.as_view(), name='client_delete'),
+    path('client/service/remove/', views.DeleteAllClientView.as_view(), name='client_delete_all'),
+    path('client/service/insert', views.ClientNameInsert.as_view(), name='client_insert'),
 
     # Отписка от рассылок
     path('unsubscribe/', views.UnsubscribeDetailView.as_view(), name='unsubscribe'),

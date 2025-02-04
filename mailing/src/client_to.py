@@ -7,16 +7,16 @@ import secrets
 
 
 class ClientTo:
-    """ Получает JSON из файла и ID  рассылки.
-    атрибут self.json - при инициализации загружается словарь е-mail'ов клиентов
-    из mailing/data/client.json
-    методы create_email_for_send, insert_clients
-    self.count_all - обработанные клиенты
-    self.count_error - количество ошибок при обработке
+    """ Получает адреса клиентов   из файла JSON.
+    атрибут self.json - при инициализации в него  загружается словарь е-mail'ов клиентов
+    из mailing/data/client.json.
+    Методы create_email_for_send, insert_clients.
+    Установит атрибуты: self.count_all - обработанные клиенты,
+    self.count_error - количество ошибок при обработке.
     """
 
 
-    def __init__(self, task_id):
+    def __init__(self, task_id=0):
         # Читать JSON из файла
         fail_name_json = os.path.join(BASE_DIR, 'mailing', 'data', 'client.json')
         with open(fail_name_json, 'r', encoding='utf8') as file:
@@ -86,15 +86,12 @@ class ClientTo:
         for client in self.json.values():
             self.count_all += 1
             # Найти его ID в таблице, если нет - добавить
-            email = ClientTo.find_client(client['email'], client['name'], client['description'])
+            email = ClientTo.find_client(client.get('email'), client.get('name'), client.get('description'))
             if not email:
                 self.count_error += 1
         # Взять данные следующего клиента
 
 
 
-x = ClientTo(5)
-print(x.task_id)
-print(x.json)
-x.create_email_for_send()
+
 
