@@ -3,10 +3,10 @@
     "model": "mailing.message",
     "pk": 1,
     "fields": {
-        "title_mail": "первая рассылка",
-        "text_mail": "Добрый день! Поздравляем с первой рассылкой",
-        "created_at": "2025-01-29T19:53:06.543Z",
-        "updated_at": "2025-01-29T19:53:06.543Z"
+        "title_mail": "Первая рассылка",
+        "text_mail": "<p>Привет!!!</p><p>Это первая рассылка...</p><p>Вот вам котики..</p><figure class=\"image\"><img src=\"\\media\\post\\2025\\02\\02\\115bf7b3ac8a408540b35bd249dc47a8.0000000.jpg\"></figure>",
+        "created_at": "2025-02-04T20:24:47.385Z",
+        "updated_at": "2025-02-04T20:29:19.220Z"
     }
 }
 ]

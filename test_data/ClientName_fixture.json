@@ -1,7 +1,7 @@
 [
 {
     "model": "mailing.clientname",
-    "pk": " anchikova.yuyu@ssau.ru",
+    "pk": "anchikova.yuyu@ssau.ru",
     "fields": {
         "name": "АНЧИКОВА Юлия Юрьевна ",
         "description": "",
@@ -10,7 +10,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " aslanov@ssau.ru",
+    "pk": "aslanov@ssau.ru",
     "fields": {
         "name": "АСЛАНОВ Владимир Степанович ",
         "description": "",
@@ -19,7 +19,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " asmolova.im@ssau.ru",
+    "pk": "asmolova.im@ssau.ru",
     "fields": {
         "name": "АСМОЛОВА Ирина Михайловна ",
         "description": "",
@@ -28,7 +28,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " astashkin.sv@ssau.ru",
+    "pk": "astashkin.sv@ssau.ru",
     "fields": {
         "name": "АСТАШКИН Сергей Владимирович ",
         "description": "",
@@ -37,7 +37,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " badykov.rr@ssau.ru",
+    "pk": "badykov.rr@ssau.ru",
     "fields": {
         "name": "БАДЫКОВ Ренат Раисович ",
         "description": "",
@@ -46,7 +46,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " balyakin.vb@ssau.ru",
+    "pk": "balyakin.vb@ssau.ru",
     "fields": {
         "name": "БАЛЯКИН Валерий Борисович",
         "description": "",
@@ -55,7 +55,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " batrov.vg@ssau.ru",
+    "pk": "batrov.vg@ssau.ru",
     "fields": {
         "name": "БАТРОВ Владимир Геннадьевич ",
         "description": "",
@@ -64,7 +64,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " belokonov.iv@ssau.ru",
+    "pk": "belokonov.iv@ssau.ru",
     "fields": {
         "name": "БЕЛОКОНОВ Игорь Витальевич ",
         "description": "",
@@ -73,7 +73,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " belousov.ag@ssau.ru",
+    "pk": "belousov.ag@ssau.ru",
     "fields": {
         "name": "БЕЛОУСОВ Андрей Григорьевич ",
         "description": "",
@@ -82,7 +82,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " berezina.ag@ssau.ru",
+    "pk": "berezina.ag@ssau.ru",
     "fields": {
         "name": "БЕРЕЗИНА Анна Григорьевна ",
         "description": "",
@@ -91,7 +91,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " bezrukova.aa@ssau.ru",
+    "pk": "bezrukova.aa@ssau.ru",
     "fields": {
         "name": "БЕЗРУКОВА Анна Андреевна ",
         "description": "",
@@ -100,7 +100,7 @@
 },
 {
     "model": "mailing.clientname",
-    "pk": " bibaeva.ei@ssau.ru",
+    "pk": "bibaeva.ei@ssau.ru",
     "fields": {
         "name": "БИБАЕВА Екатерина Ивановна ",
         "description": "",

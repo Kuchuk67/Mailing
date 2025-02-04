@@ -8,7 +8,7 @@ class ClientName(models.Model):
     email = models.CharField(primary_key=True, max_length=150, verbose_name="email клиента")
     name = models.CharField(max_length=150, verbose_name="Фамилия Имя Отчество")
     description  = models.TextField(verbose_name="Комментарий", null=True, blank=True,)
-    unsubscribe = models.IntegerField( default=None, null=True, blank=True, editable=False,  verbose_name="Отписка")
+    unsubscribe = models.IntegerField( default=0,  editable=False,  verbose_name="Отписка")
 
     def __str__(self):
         return f"{self.name} - {self.email}"

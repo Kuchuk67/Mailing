@@ -33,6 +33,7 @@ class ClientTo:
     @staticmethod
     def find_client(client_email, client_name, client_description='') -> Optional[str]:
         """ Находит пользователя в таблице Client по e-mail'у, если нет - добавляет."""
+        client_email = client_email.strip()
         client = ClientName.objects.filter(email=client_email).first()
         if client is None:
             try:
@@ -91,9 +92,7 @@ class ClientTo:
                 self.count_error += 1
         # Взять данные следующего клиента
 
-class Email:
 
-    ...
 
 
 
