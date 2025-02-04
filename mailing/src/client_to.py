@@ -91,6 +91,10 @@ class ClientTo:
                 self.count_error += 1
         # Взять данные следующего клиента
 
+class Email:
+
+    ...
+
 
 
 

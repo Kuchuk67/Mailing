@@ -62,10 +62,10 @@ class DeleteAllClientView(View):
                 #form.instance.delete()
                 # Перенаправляем пользователя на другую страницу после удаления
                 return redirect('mailing:clients')
-        else:
+        """else:
             form = DeleteObjectForm()
             template_name = 'mailing/client/clientname_confirm_delete.html'
-        #return render(request, 'mailing/client/clientname_confirm.html', {'form': 'form'})
+        #return render(request, 'mailing/client/clientname_confirm.html', {'form': 'form'})"""
     def get(self, request, *args, **kwargs):
         return render(request, 'mailing/client/clientname_confirm.html')
 

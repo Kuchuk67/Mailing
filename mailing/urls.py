@@ -7,9 +7,11 @@ from django.conf.urls.static import static
 app_name = 'mailing'
 
 urlpatterns = [
+    # Рассылки - аналитика
+    path('', views.AnaliticView.as_view(), name='analitic'),
+
     # Получатели рассылки - Клиенты
     path('client/', views.ClientNameListView.as_view(), name='clients'),
-    #path('client/<int:pk>', views.ClientNameDetailsView.as_view(), name='client_details'),
     path('client/create', views.ClientNameCreateView.as_view(), name='client_create'),
     path('client/<str:pk>', views.ClientNameUpdateView.as_view(), name='client_edit'),
     path('client/<str:pk>/delete', views.ClientNameDeleteView.as_view(), name='client_delete'),
@@ -31,7 +33,7 @@ urlpatterns = [
     path('task/<int:pk>', views.TaskUpdateView.as_view(), name='task_edit'),
     path('task/<int:pk>/delete', views.TaskDeleteView.as_view(), name='task_delete'),
 
-    path('', views.ClientNameListView.as_view(), name='clients'),
+
 
 
 ]
