@@ -25,7 +25,7 @@ class TaskForm(forms.ModelForm):
         if end_at <= start_at:
             self.add_error('end_at', 'Дата завершения должна быть позже даты начала')
 
-        print(start_at.strftime('%Y-%m-%d %H:%M:%S'), str(datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")))
+        #print(start_at.strftime('%Y-%m-%d %H:%M:%S'), str(datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")))
         if status == 'created' and start_at.strftime('%Y-%m-%d %H:%M:%S') < datetime.now().strftime('%Y-%m-%d %H:%M:%S'):
             self.add_error('end_at', 'При запуске рассылки установите время начала больше текущего')
 
