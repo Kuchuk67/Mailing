@@ -2,7 +2,7 @@ from django import forms
 from .models import Task,Message,ClientName
 from django.contrib.admin import helpers, widgets
 from datetime import datetime
-#import pytz
+
 
 
 class TaskForm(forms.ModelForm):
@@ -40,5 +40,3 @@ class ClientNameForm(forms.ModelForm):
     class Meta:
         model = ClientName
         fields = ['email', 'name', 'description']
-
-

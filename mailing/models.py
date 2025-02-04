@@ -5,7 +5,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 
 # Create your models here.
 class ClientName(models.Model):
-    email = models.CharField(max_length=150, verbose_name="email клиента")
+    email = models.CharField(primary_key=True, max_length=150, verbose_name="email клиента")
     name = models.CharField(max_length=150, verbose_name="Фамилия Имя Отчество")
     description  = models.TextField(verbose_name="Комментарий", null=True, blank=True,)
     unsubscribe = models.IntegerField( default=None, null=True, blank=True, editable=False,  verbose_name="Отписка")
