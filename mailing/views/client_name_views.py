@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task
 from django.views.generic import ListView, DetailView
+from ..forms import ClientNameForm
 
 class ClientNameListView(ListView):
     model = ClientName
@@ -13,7 +14,7 @@ class ClientNameListView(ListView):
 
 class ClientNameCreateView(CreateView):
     model = ClientName
-    fields = ['email',  'name',  'description', ]
+    form_class = ClientNameForm
     success_url = reverse_lazy('mailing:clients')
     template_name = 'mailing/client/clientname_form.html'
     extra_context = {"active_menu": "client"}
@@ -28,7 +29,7 @@ class ClientNameUpdateView(UpdateView):
     model = ClientName
     context_object_name = 'client'
     template_name = 'mailing/client/clientname_form.html'
-    fields = ['email',  'name',  'description']
+    form_class = ClientNameForm
     success_url = reverse_lazy('mailing:clients')
     extra_context = {"active_menu": "client"}
 

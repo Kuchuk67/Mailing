@@ -43,8 +43,8 @@ class Task(models.Model):
         ('created', 'Создана'),
         ('start', 'Запущена'),
     ]
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='stop')
-    message = models.ForeignKey(Message, on_delete=models.CASCADE, related_name="message")
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='stop', verbose_name='Статус')
+    message = models.ForeignKey(Message, on_delete=models.CASCADE, related_name="message", verbose_name='Текст сообщения')
 
     def __str__(self):
         return f"{self.start_at} - {self.status}"

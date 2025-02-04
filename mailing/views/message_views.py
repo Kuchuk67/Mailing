@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task
 from django.views.generic import ListView, DetailView
+from ..forms import MessageForm
 
 # Views for model Message
 
@@ -16,7 +17,7 @@ class MessageListView(ListView):
 
 class MessageCreateView(CreateView):
     model = Message
-    fields = ['title_mail', 'text_mail']
+    form_class = MessageForm
     success_url = reverse_lazy('mailing:messages')
     template_name = 'mailing/message/message_form.html'
     extra_context = {'title': "Создать новый текст рассылки",
@@ -25,7 +26,7 @@ class MessageCreateView(CreateView):
 
 class MessageUpdateView(UpdateView):
     model = Message
-    fields = ['title_mail', 'text_mail',  ]
+    form_class = MessageForm
     success_url = reverse_lazy('mailing:messages')
     template_name = 'mailing/message/message_form.html'
     extra_context = {'title': "Редактировать текст рассылки",

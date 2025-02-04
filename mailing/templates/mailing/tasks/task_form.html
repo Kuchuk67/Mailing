@@ -14,12 +14,15 @@
             <form method="POST" enctype="multipart/form-data">
 
                 {% csrf_token %}
-                <div class="p-3">Имя задачи:
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+                <!--<div class="p-3">Имя задачи:
                 <h1>{{ form.name }}</h1>
                 </div>
                 <div class="p-3">Дата запуска:
                 {{ form.start_at }}
                 </div>
+
                 <div class="p-3">Дата завершения:
                 {{ form.end_at }}
                 </div>
@@ -28,7 +31,7 @@
                 </div>
                 <div class="p-3">Текст:
                 {{ form.message }}
-                </div>
+                </div>-->
 
 
                 <button type="submit" class="btn btn-primary">Сохранить</button>

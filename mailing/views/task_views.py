@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task
 from django.views.generic import ListView, DetailView
-from ..forms import NewDataForm
+from ..forms import TaskForm
 
 
 
@@ -25,8 +25,7 @@ class TaskDetailsView(DetailView):
 
 class TaskCreateView(CreateView):
     model = Task
-    form_class = NewDataForm
-    #fields = ['name', 'start_at', 'end_at', 'status', 'message']
+    form_class = TaskForm
     success_url = reverse_lazy('mailing:tasks')
     extra_context = {"active_menu": "task"}
     template_name = 'mailing/tasks/task_form.html'
@@ -34,8 +33,7 @@ class TaskCreateView(CreateView):
 
 class TaskUpdateView(UpdateView):
     model = Task
-    form_class = NewDataForm # EventForm
-    #fields = ['name', 'start_at', 'end_at', 'status', 'message',]
+    form_class = TaskForm
     success_url = reverse_lazy('mailing:tasks')
     extra_context = {"active_menu": "task"}
     template_name = 'mailing/tasks/task_form.html'
