@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.views import View
 from ..forms import ClientNameForm, DeleteObjectForm
 from django.shortcuts import redirect, render
+from ..src.client_to import ClientTo
 
 class ClientNameListView(ListView):
     model = ClientName
@@ -59,24 +60,23 @@ class DeleteAllClientView(View):
             if form.is_valid():
                 # Удаляем все объекты модели
                 ClientName.objects.all().delete()
-                #form.instance.delete()
                 # Перенаправляем пользователя на другую страницу после удаления
                 return redirect('mailing:clients')
-        """else:
-            form = DeleteObjectForm()
-            template_name = 'mailing/client/clientname_confirm_delete.html'
-        #return render(request, 'mailing/client/clientname_confirm.html', {'form': 'form'})"""
     def get(self, request, *args, **kwargs):
-        return render(request, 'mailing/client/clientname_confirm.html')
+        return render(request, 'mailing/client/clientname_confirm.html', {"active_menu": "client"})
 
-from ..src.client_to import ClientTo
+
 
 class ClientNameInsert(View):
     def get(self, request, *args, **kwargs):
         json_mail = ClientTo()
         json_mail.insert_clients()
-        #return json_mail.count_all, json_mail.count_error
-
         return render(request, 'mailing/client/clientname_insert_report.html',
-                      {'count_all': json_mail.count_all, 'count_error': json_mail.count_error} )
+                      {'count_all': json_mail.count_all,
+                       'count_error': json_mail.count_error,
+                       "active_menu": "client",
+                       'count_add': json_mail.count_add,
+                       'count_update': json_mail.count_update,
+                       'count_ok': json_mail.count_ok
+                       } )
 

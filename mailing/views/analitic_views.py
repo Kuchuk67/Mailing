@@ -17,6 +17,7 @@ class AnaliticView(View):
         count_tasks = Task.objects.filter().count()
         count_tasks_end = Task.objects.filter(status='end').count()
         count_tasks_active = count_tasks - (count_tasks_end + count_tasks_stop)
+
         return render(request, 'mailing/index.html',
                       {'count_clients': count_clients,
                        'clients_unsubscribe': clients_unsubscribe,

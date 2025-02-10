@@ -28,23 +28,21 @@
                     <h3>Рассылки</h3>
                     <hr />
                     <div class=" ">
-                        <div class=" fs-1 text fw-bold">{{ count_clients_activeu }}</div>
-                         <div>всего {{  count_clients }} адресов</div>
-                         <div>завершенных {{ count_clients_end }}
+                        <div class=" fs-1 text fw-bold">{{ count_tasks }}</div>
+                         <div>в работе {{  count_tasks_active }} </div>
+                         <div>завершенных {{ count_tasks_end }}</div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 p-3">
                 <div class="p-3 border">
-                    <h3>Название рассылки</h3>
+                    <h3>Отправлено писем</h3>
                     <hr />
-                    test
+                    <div class=" fs-1 text fw-bold">{{ count_clients_active }}</div>
+                    <div>ждет отправки {{  count_clients }} </div>
                 </div>
             </div>
-</div>
-
-</div>
-
-</div>
+        </div>
     </div>
 </div>
 

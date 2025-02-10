@@ -28,22 +28,33 @@ class ClientTo:
         self.task_id = task_id
         self.count_all = 0
         self.count_error = 0
+        self.count_add = 0
+        self.count_update = 0
+        self.count_ok = 0
 
 
     @staticmethod
-    def find_client(client_email, client_name, client_description='') -> Optional[str]:
-        """ Находит пользователя в таблице Client по e-mail'у, если нет - добавляет."""
+    def find_client(client_email, client_name, client_description='') -> tuple[str, str]:
+        """ Находит пользователя в таблице Client по e-mail'у, если нет - добавляет.
+        Возвращает email, статус:
+        new - новый клиент;
+        error - ошибка при добавлении;
+        ok - клиент найден;
+        update - обновление данных клиента."""
         client_email = client_email.strip()
         client = ClientName.objects.filter(email=client_email).first()
         if client is None:
             try:
                 client = ClientName.objects.create(email=client_email, name=client_name, description=client_description)
                 client.save()
+                status = 'new'
             except Exception as e:
                 print(e, "Ошибка: не добавлен клиент ", client_email, client_name, client_description)
-                client.email = None
+                client.email = ''
+                status = 'error'
         else:
             # если данные не сходятся перезаписываем
+            status = 'ok'
             save = False
             if client.name != client_name:
                 client.name = client_name
@@ -53,7 +64,8 @@ class ClientTo:
                 save = True
             if save:
                 client.save()
-        return client.email
+                status = 'update'
+        return client.email, status
 
 
     def create_email_for_send(self):
@@ -63,6 +75,9 @@ class ClientTo:
         """
         self.count_all = 0
         self.count_error = 0
+        self.count_add = 0
+        self.count_update = 0
+        self.count_ok = 0
         # Взять данные одного клиента
         for client in self.json.values():
             self.count_all += 1
@@ -83,15 +98,26 @@ class ClientTo:
         """ Добавляет пользователя в таблицу Client"""
         self.count_all = 0
         self.count_error = 0
+        self.count_add = 0
+        self.count_update = 0
+        self.count_ok = 0
         # Взять данные одного клиента
         for client in self.json.values():
             self.count_all += 1
             # Найти его ID в таблице, если нет - добавить
-            email = ClientTo.find_client(client.get('email'), client.get('name'), client.get('description'))
-            if not email:
+            email,status = ClientTo.find_client(client.get('email'), client.get('name'), client.get('description'))
+            # сохраняем результат
+            if status == 'error':
                 self.count_error += 1
-        # Взять данные следующего клиента
+            if status == 'new':
+                self.count_add += 1
+            if status == 'update':
+                self.count_update += 1
+            if status == 'ok':
+                self.count_ok += 1
 
+
+        # Взять данные следующего клиента
 
 
 

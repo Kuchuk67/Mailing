@@ -11,5 +11,8 @@ python  -Xutf8 manage.py dumpdata mailing.ClientName --output test_data/ClientNa
 python  -Xutf8 manage.py dumpdata mailing.Message --output test_data/Message_fixture.json --indent 4
 python -Xutf8 manage.py dumpdata mailing.Task --output test_data/Task_fixture.json --indent 4
 
+Загрузить тестовые данные
 python manage.py loaddata test_data/ClientName_fixture.json
+python manage.py loaddata test_data/Message_fixture.json
+python manage.py loaddata test_data/Task_fixture.json
 

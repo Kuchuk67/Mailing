@@ -3,10 +3,43 @@
     "model": "mailing.task",
     "pk": 1,
     "fields": {
-        "name": "рассылка №1",
+        "name": "Рассылка №1",
         "start_at": "2025-02-04T20:25:00Z",
         "end_at": "2025-02-05T20:25:00Z",
         "status": "stop",
+        "message": 1
+    }
+},
+{
+    "model": "mailing.task",
+    "pk": 2,
+    "fields": {
+        "name": "Рассылка №2",
+        "start_at": "2025-02-07T05:54:00Z",
+        "end_at": "2025-02-20T05:55:00Z",
+        "status": "end",
+        "message": 1
+    }
+},
+{
+    "model": "mailing.task",
+    "pk": 3,
+    "fields": {
+        "name": "Рассылка №3",
+        "start_at": "2025-02-13T05:55:00Z",
+        "end_at": "2025-02-20T05:55:00Z",
+        "status": "created",
+        "message": 1
+    }
+},
+{
+    "model": "mailing.task",
+    "pk": 4,
+    "fields": {
+        "name": "Рассылка №4",
+        "start_at": "2025-01-28T05:55:00Z",
+        "end_at": "2025-02-21T05:55:00Z",
+        "status": "start",
         "message": 1
     }
 }
