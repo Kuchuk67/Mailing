@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    {% include 'menu.html' %}
+
+<div class="fon">
+    <div class=" container-lg d-flex ">
+        <div class="col-md-6 p-3 d-flex justify-content-center">
+             {{ task.pk }}<br />
+             {{ task.name }}<br />
+             {{ task.message.created_at }}<br />
+           = {{ task.client_emails.name }}=<br />
+           = {{ task.clients.name }}=<br />
+<br /><br /><br />
+
+                <a href="{% url 'mailing:tasks' %}" class="btn btn-secondary">Отмена</a>
+
+                <a class="btn btn-danger" href="{% url 'mailing:task_delete' task.id %} ">Удалить</a>
+
+
+        </div>
+        <div class="col-md-6 p-3 border">
+
+
+
+        </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

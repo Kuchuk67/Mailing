@@ -14,6 +14,20 @@ class MessageListView(ListView):
     paginate_by = 15
     extra_context = {"active_menu": "messages"}
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # перебираем все записи
+        for message in context['messages']:
+            # и что-то с ними делаем....
+            print(message.pk)
+            x = Task.objects.filter(message=message.pk).count()
+            print(x)
+        print("+++")
+        x = Task.objects.all().distinct().count()
+            # self.object.task_set.all()
+        # print(context['messages'][0].text_mail)
+        return context
+
 
 class MessageCreateView(CreateView):
     model = Message

@@ -9,6 +9,7 @@ class ClientName(models.Model):
     name = models.CharField(max_length=150, verbose_name="Фамилия Имя Отчество")
     description  = models.TextField(verbose_name="Комментарий", null=True, blank=True,)
     unsubscribe = models.IntegerField( default=0,  editable=False,  verbose_name="Отписка")
+    #tasks = models.ManyToManyField(Task, through="EmailForSend", related_name="tasks")
 
     def __str__(self):
         return f"{self.name} - {self.email}"
@@ -45,7 +46,7 @@ class Task(models.Model):
     ]
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='stop', verbose_name='Статус')
     message = models.ForeignKey(Message, on_delete=models.CASCADE, related_name="message", verbose_name='Текст сообщения')
-    client_emails = models.ManyToManyField(ClientName, through="EmailForSend")
+    client_emails = models.ManyToManyField(ClientName, through="EmailForSend",  related_name="clients" )
 
 
     def __str__(self):

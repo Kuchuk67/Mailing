@@ -44,3 +44,10 @@ class TaskDeleteView(DeleteView):
     success_url = reverse_lazy('mailing:tasks')
     extra_context = {"active_menu": "task"}
     template_name = 'mailing/tasks/task_confirm_delete.html'
+
+class TaskForClientsView(DetailView):
+    model = Task
+    context_object_name = 'task'
+    extra_context = {"active_menu": "task"}
+    template_name = 'mailing/tasks/task_for_clients.html'
+    print()

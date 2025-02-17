@@ -23,7 +23,7 @@
                                 <td><a href="{{ message.id }}">{{ message.title_mail }}</a></td>
                                 <td>{{ message.created_at | date:"d M Y" }}</td>
                                 <td>{{ message.updated_at | date:"d M Y" }}</td>
-
+                                <td>*{{ message }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>

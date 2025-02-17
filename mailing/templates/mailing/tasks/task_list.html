@@ -15,6 +15,7 @@
                                 <th>Время начала</th>
                                 <th>Время завершения</th>
                                 <th>Статус</th>
+                                <th>Подключенные адреса</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -25,6 +26,7 @@
                                 <td>{{ task.start_at | date:"d M Y H:i" }}</td>
                                 <td>{{ task.end_at | date:"d M Y H:i" }}</td>
                                 <td>{{ task.status }}</td>
+                                <td><a href="{{ task.id }}/clients/">...</a></td>
 
                             </tr>
                             {% endfor %}
