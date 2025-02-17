@@ -10,18 +10,41 @@
              {{ task.pk }}<br />
              {{ task.name }}<br />
              {{ task.message.created_at }}<br />
-           = {{ task.client_emails.name }}=<br />
-           = {{ task.clients.name }}=<br />
+
+
 <br /><br /><br />
 
-                <a href="{% url 'mailing:tasks' %}" class="btn btn-secondary">Отмена</a>
+                <a href="{% url 'mailing:tasks' %}{% if page  %}?page={{ page }}{% endif %} " class="btn btn-secondary">Отмена</a>
 
-                <a class="btn btn-danger" href="{% url 'mailing:task_delete' task.id %} ">Удалить</a>
+                <a class="btn btn-danger" href="# ">Удалить</a>
 
 
         </div>
         <div class="col-md-6 p-3 border">
 
+             <h1>Адреса для рассылок</h1>
+                    <a class="btn btn-primary" href="{% url 'mailing:client_create' %} ">Добавить</a>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Клиент</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% include 'pagination.html' %}
+                            {% for client in clients %}
+                            <tr>
+                                <td><a href="{{ client.pk }}">{{ client.client }}</a></td>
+
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <a class="btn btn-danger" href="{% url 'mailing:client_delete_all' %} ">Удалить ВСЕХ</a>
+                    <a class="btn btn-primary" href="{% url 'mailing:client_insert' %} ">Добавить новых</a>
 
 
         </div>

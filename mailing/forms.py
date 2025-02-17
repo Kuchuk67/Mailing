@@ -10,11 +10,12 @@ class TaskForm(forms.ModelForm):
                                           format='%Y-%m-%dT%H:%M'), label='Время начала рассылки'  )
     end_at = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local', 'title':  'дата последнего изменения'},
                                                               format='%Y-%m-%dT%H:%M'), label='Время завершение рассылки')
+    description = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}), label='Комментарий')
 
     class Meta:
         model = Task
         input_formats = ['%Y-%m-%dT%H:%M:%SZ']
-        fields = ['name',  'start_at', 'end_at', 'status', 'message']
+        fields = ['name',  'start_at', 'end_at', 'status', 'message', 'description']
 
     def clean(self):
         cleaned_data = super().clean()

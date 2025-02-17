@@ -1,0 +1,74 @@
+[
+{
+    "model": "mailing.emailforsend",
+    "pk": 1,
+    "fields": {
+        "task": 1,
+        "client": "chubenko.sv@ssau.ru",
+        "token": "dsdfsdf"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 2,
+    "fields": {
+        "task": 1,
+        "client": "shabliy.ls@ssau.ru",
+        "token": "shabt456554654"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 3,
+    "fields": {
+        "task": 1,
+        "client": "bjd@ssau.ru",
+        "token": "jhnbfd45354"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 4,
+    "fields": {
+        "task": 2,
+        "client": "bjd@ssau.ru",
+        "token": "g54654ghf45354"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 5,
+    "fields": {
+        "task": 2,
+        "client": "shakhm@ssau.ru",
+        "token": "g54rtyr45354"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 6,
+    "fields": {
+        "task": 1,
+        "client": "shakhm@ssau.ru",
+        "token": "g54rtyr45354"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 7,
+    "fields": {
+        "task": 1,
+        "client": "vds@ssau.ru",
+        "token": "g5464645354"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 8,
+    "fields": {
+        "task": 2,
+        "client": "vds@ssau.ru",
+        "token": "tyutyu4645354"
+    }
+}
+]

@@ -3,6 +3,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task
 from django.views.generic import ListView, DetailView
 from ..forms import MessageForm
+from django.db.models import Count, Sum, Avg, Max, Min
 
 # Views for model Message
 
@@ -16,17 +17,10 @@ class MessageListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # перебираем все записи
-        for message in context['messages']:
-            # и что-то с ними делаем....
-            print(message.pk)
-            x = Task.objects.filter(message=message.pk).count()
-            print(x)
-        print("+++")
-        x = Task.objects.distinct('message')
-        print(x)
-        # self.object.task_set.all()
-        # print(context['messages'][0].text_mail)
+
+        # Подсчет сколько созданных рассылок используют этот текст
+        counter_message = Task.objects.values('message').order_by('message').annotate(field_count=Count('message'))
+        context['counter_message'] = counter_message
         return context
 
 

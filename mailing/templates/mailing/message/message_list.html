@@ -14,6 +14,7 @@
                                 <th>Тема</th>
                                 <th>Дата создания</th>
                                 <th>Дата изменения</th>
+                                <th>Используется в рассылках</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,7 +24,15 @@
                                 <td><a href="{{ message.id }}">{{ message.title_mail }}</a></td>
                                 <td>{{ message.created_at | date:"d M Y" }}</td>
                                 <td>{{ message.updated_at | date:"d M Y" }}</td>
-                                <td>*{{ message }}</td>
+                                <td>
+                                    {% for counter in counter_message %}
+                                        {% if counter.message == message.pk %}
+                                            {{ counter.field_count }}
+                                        {% endif %}
+                                    {% endfor %}
+
+
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>

@@ -12,7 +12,7 @@
 ## Тексты
 Содержит базу текстов для рассылок.
 Возможность добавления и редактирования текстов через
-визуальные редактор ck-editor.
+визуальные редактор CK-Editor.
 
 ## Планировка рассылок
 Содержит функционал для создания задачи по организации рассыкци.
@@ -31,27 +31,48 @@
 
 ## Установка
 
+Проект разработан под управлением poetry
+Активация виртуального окружения
+```commandline
+ poetry shell
+```
+Установка пакетов
+```commandline
+ poetry install
+```
+
 python manage.py  makemigrations
 ```commandline
-python manage.py  migrate
+ python manage.py  migrate
 ```
 ```commandline
-python manage.py createsuperuser
+ python manage.py createsuperuser
 ```
+
+
+### Загрузить тестовые данные
+
+Клиенты
+```commandline
+ python manage.py loaddata test_data/ClientName_fixture.json
+```
+Тексты для писем
+```commandline
+ python manage.py loaddata test_data/Message_fixture.json
+```
+Запланированные рассылки
+```commandline
+ python manage.py loaddata test_data/Task_fixture.json
+```
+Подключенные email-ы к рассылкам
+```commandline
+ python manage.py loaddata test_data/EmailForSend_fixture.json
+```
+
 
 python  -Xutf8 manage.py dumpdata mailing.ClientName --output test_data/ClientName_fixture.json --indent 4
 python  -Xutf8 manage.py dumpdata mailing.Message --output test_data/Message_fixture.json --indent 4
 python -Xutf8 manage.py dumpdata mailing.Task --output test_data/Task_fixture.json --indent 4
+python -Xutf8 manage.py dumpdata mailing.EmailForSend --output test_data/EmailForSend_fixture.json --indent 4
 
-### Загрузить тестовые данные
-```commandline
-python manage.py loaddata test_data/ClientName_fixture.json
-```
-```commandline
-python manage.py loaddata test_data/Message_fixture.json
-```
-```commandline
-python manage.py loaddata test_data/Task_fixture.json
-
-```
 

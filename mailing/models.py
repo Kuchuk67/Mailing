@@ -46,7 +46,8 @@ class Task(models.Model):
     ]
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='stop', verbose_name='Статус')
     message = models.ForeignKey(Message, on_delete=models.CASCADE, related_name="message", verbose_name='Текст сообщения')
-    client_emails = models.ManyToManyField(ClientName, through="EmailForSend",  related_name="clients" )
+    client_emails = models.ManyToManyField(ClientName, through="EmailForSend",  related_name="tasks" )
+    description = models.TextField(blank=True, null=True, verbose_name='Коментарии')
 
 
     def __str__(self):

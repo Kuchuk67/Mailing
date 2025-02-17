@@ -5,7 +5,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h1>Планировщик рассылок</h1>
                     <a class="btn btn-primary" href="{% url 'mailing:task_create' %} ">Добавить</a>
                     <table class="table table-striped">
@@ -15,18 +15,30 @@
                                 <th>Время начала</th>
                                 <th>Время завершения</th>
                                 <th>Статус</th>
-                                <th>Подключенные адреса</th>
+                                <th>Адреса</th>
+                                <th>Комментарий</th>
                             </tr>
                         </thead>
                         <tbody>
                              {% include 'pagination.html' %}
                             {% for task in tasks %}
-                            <tr>
-                                <td><a href="{{ task.id }}">{{ task.name }}</a><br />{{ task.message }}</td>
+                            <tr {% if task.status == 'created' %} class="bs-danger-bg-subtle" {% endif %}
+                              {% if task.status == 'start' %} class="bs-danger-bg-subtle" {% endif %}>
+                                <td><b><a href="{{ task.id }}">{{ task.name }}</a></b><br />{{ task.message }}</td>
                                 <td>{{ task.start_at | date:"d M Y H:i" }}</td>
                                 <td>{{ task.end_at | date:"d M Y H:i" }}</td>
-                                <td>{{ task.status }}</td>
-                                <td><a href="{{ task.id }}/clients/">...</a></td>
+                                <td>{{ task.get_status_display }}</td>
+                                <td  style="text-align: center;"><a class="min-botton btn btn-secondary" href="{{ task.id }}/clients/{% if page %}?page={{ page }}{% endif %}  ">
+                                    {% for counter in clients_counter %}
+                                        {% if counter.task_id == task.id %}
+                                            {{ counter.field_count }}                                                                 {{                          vbvbvbvbvbvbv}}
+                                        {% endif %}
+                                    {% endfor %}
+                                </a></td>
+                                <td>{% if task.description %}
+                                    {{ task.description | truncatechars:50 }}
+                                    {% endif %}
+                                </td>
 
                             </tr>
                             {% endfor %}
