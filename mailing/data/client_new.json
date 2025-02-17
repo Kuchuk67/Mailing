@@ -1,5 +1,89 @@
 {
-
+    "1": {
+        "name": "АГАФОНОВ Андрей Юрьевич",
+        "email": "agafonov.ayu@ssau.ru",
+        "description": "Преподаватель"
+    },
+    "2": {
+        "name": "АКУЛОВ Сергей Анатольевич",
+        "email": "akulov.sa@ssau.ru"
+    },
+    "3": {
+        "name": "АЛЕКСЕЕВ Алексей Владимирович",
+        "email": "alekseev.av@ssau.ru"
+    },
+    "4": {
+        "name": "АНИСИМОВ Михаил Юрьевич",
+        "email": "anisimov.myu@ssau.ru"
+    },
+    "5": {
+        "name": "АНЧИКОВА Юлия Юрьевна",
+        "email": "anchikova.yuyu@ssau.ru"
+    },
+    "6": {
+        "name": "АРЖАНОВ Алексей Павлович",
+        "email": "arjanov.ap@ssau.ru"
+    },
+    "7": {
+        "name": "АСЛАНОВ Владимир Степанович",
+        "email": "aslanov@ssau.ru"
+    },
+    "8": {
+        "name": "АСМОЛОВА Ирина Михайловна",
+        "email": "asmolova.im@ssau.ru"
+    },
+    "9": {
+        "name": "АСТАШКИН Сергей Владимирович",
+        "email": "astashkin.sv@ssau.ru"
+    },
+    "10": {
+        "name": "БАДЫКОВ Ренат Раисович",
+        "email": "badykov.rr@ssau.ru"
+    },
+    "11": {
+        "name": "БАЛЯКИН Валерий Борисович",
+        "email": "balyakin.vb@ssau.ru"
+    },
+    "12": {
+        "name": "БАРАШКИНА Елена Александровна",
+        "email": "barashkina.ea@ssau.ru"
+    },
+    "13": {
+        "name": "БАТРОВ Владимир Геннадьевич",
+        "email": "batrov.vg@ssau.ru"
+    },
+    "14": {
+        "name": "БЕЗРУКОВА Анна Андреевна",
+        "email": "bezrukova.aa@ssau.ru"
+    },
+    "15": {
+        "name": "БЕЛИНСКАЯ Марина Николаевна",
+        "email": "belinskaya.mn@ssau.ru"
+    },
+    "16": {
+        "name": "БЕЛОКОНОВ Игорь Витальевич",
+        "email": "belokonov.iv@ssau.ru"
+    },
+    "17": {
+        "name": "БЕЛОУСОВ Андрей Григорьевич",
+        "email": "belousov.ag@ssau.ru"
+    },
+    "18": {
+        "name": "БЕРЕЗИНА Анна Григорьевна",
+        "email": "berezina.ag@ssau.ru"
+    },
+    "19": {
+        "name": "БИБАЕВА Екатерина Ивановна",
+        "email": "bibaeva.ei@ssau.ru"
+    },
+    "20": {
+        "name": "БИБИКОВ Сергей Алексеевич",
+        "email": "bibikov.sa@ssau.ru"
+    },
+    "21": {
+        "name": "БИРЮКОВ Павел Викторович",
+        "email": "pbir@ssau.ru"
+    },
     "22": {
         "name": "БЛАГОВ Александр Владимирович",
         "email": "blagov@ssau.ru"
@@ -28,7 +112,46 @@
         "name": "БОЛГОВА Виктория Владимировна",
         "email": "bolgova.vv@ssau.ru"
     },
-
+    "29": {
+        "name": "БОЛДЫРЕВ Андрей Вячеславович",
+        "email": "boldirev.av@ssau.ru"
+    },
+    "30": {
+        "name": "БОЛОТОВ Михаил Александрович",
+        "email": "bolotov@ssau.ru"
+    },
+    "31": {
+        "name": "БОРЗЫХ Дмитрий Анатольевич",
+        "email": "borzikh.da@ssau.ru"
+    },
+    "32": {
+        "name": "БОРИСОВ Александр Яковлевич",
+        "email": "borisov.aya@ssau.ru"
+    },
+    "33": {
+        "name": "БОЯРКИНА Ульяна Викторовна",
+        "email": "boyarkina.uv@ssau.ru"
+    },
+    "34": {
+        "name": "БРЫЛЕВ Александр Владимирович",
+        "email": "brilev.av@ssau.ru"
+    },
+    "35": {
+        "name": "БУРДАНОВ Михаил Петрович",
+        "email": "burdanov.mp@ssau.ru"
+    },
+    "36": {
+        "name": "БЛИНОВА Екатерина Анатольевна",
+        "email": "blinova@ssau.ru"
+    },
+    "37": {
+        "name": "БЫСТРОВ Николай Дмитриевич",
+        "email": "bistrov.nd@ssau.ru"
+    },
+    "38": {
+        "name": "ВАСИЛЬЕВА Ирина Павловна",
+        "email": "vasileva.ip@ssau.ru"
+    },
     "39": {
         "name": "ВАШУКОВ Юрий Александрович",
         "email": "vashukov@ssau.ru"
@@ -85,6 +208,50 @@
         "name": "ГЛУМОВ Николай Иванович",
         "email": "glumov.ni@ssau.ru"
     },
+    "53": {
+        "name": "ГНАТОВА Оксана Владимировна",
+        "email": "gnatova.ov@ssau.ru"
+    },
+    "54": {
+        "name": "ГНУТОВА Анна Александровна",
+        "email": "gnutova.aa@ssau.ru"
+    },
+    "55": {
+        "name": "ГОЛУБИНОВ Ярослав Анатольевич",
+        "email": "golubinov.yaa@ssau.ru"
+    },
+    "56": {
+        "name": "ГОРЕЛОВ Юрий Николаевич",
+        "email": "gorelov.yun@ssau.ru"
+    },
+    "57": {
+        "name": "ГОРШКОВ Юрий Сергеевич",
+        "email": "gorshkov.yus@ssau.ru"
+    },
+    "58": {
+        "name": "ГОРЯИНОВ Сергей Борисович",
+        "email": "gsb@ssau.ru"
+    },
+    "59": {
+        "name": "ГОТЛИБ Анна Семеновна",
+        "email": "gotlib.as@ssau.ru"
+    },
+    "60": {
+        "name": "ГОШИН Егор Вячеславович",
+        "email": "goshine@ssau.ru"
+    },
+    "61": {
+        "name": "ГРЕЧИШНИКОВ Владимир Михайлович",
+        "email": "gv@ssau.ru"
+    },
+    "62": {
+        "name": "ГРЕЧНИКОВ Федор Васильевич",
+        "email": "gretch@ssau.ru"
+    },
+    "63": {
+        "name": "ГРИГОРЬЕВ Владимир Алексеевич",
+        "email": "va_grig@ssau.ru"
+    },
     "64": {
         "name": "ГРИДНЕВА Екатерина Сергеевна",
         "email": "gridneva.es@ssau.ru"
@@ -136,6 +303,74 @@
     "76": {
         "name": "ДОСКОЛОВИЧ Леонид Леонидович",
         "email": "doskolovich.ll@ssau.ru"
+    },
+    "77": {
+        "name": "ДУБИНИН Сергей Иванович",
+        "email": "dubinin.si@ssau.ru"
+    },
+    "78": {
+        "name": "ДУБРОВИНА Наталья Александровна",
+        "email": "dubrovina.na@ssau.ru"
+    },
+    "79": {
+        "name": "ДУДИНА Ольга Борисовна",
+        "email": "dudina.ob@ssau.ru"
+    },
+    "80": {
+        "name": "ЕВСТИФОРОВА Светлана Петровна",
+        "email": "evstiforova.sp@ssau.ru"
+    },
+    "81": {
+        "name": "ЕЖОВА Людмила Владимировна",
+        "email": "ejova.lv@ssau.ru"
+    },
+    "82": {
+        "name": "ЕЛЕНЕВ Дмитрий Валерьевич",
+        "email": "elenev@ssau.ru"
+    },
+    "83": {
+        "name": "ЕЛИСТРАТОВА Лариса Евгеньевна",
+        "email": "ssau@ssau.ru"
+    },
+    "84": {
+        "name": "ЕСИПОВА Ольга Васильевна",
+        "email": "esipova.ov@ssau.ru"
+    },
+    "85": {
+        "name": "РОДИОНОВА Елена Владимировна",
+        "email": "rodionova.ev@ssau.ru"
+    },
+    "86": {
+        "name": "ЕЛИСЕЕВ Олег Александрович",
+        "email": "ozgti@ssau.ru"
+    },
+    "87": {
+        "name": "ЕРОШКИНА Татьяна Николаевна",
+        "email": "eroshkina.tn@ssau.ru"
+    },
+    "88": {
+        "name": "ЕФИМОВА Тамара Александровна",
+        "email": "efimova.ta@ssau.ru"
+    },
+    "89": {
+        "name": "ЖЕЖЕРЯ Елена Юрьевна",
+        "email": "jejerya.eyu@ssau.ru"
+    },
+    "90": {
+        "name": "ЖЕЛЕЗНОВА Ксения Александровна",
+        "email": "zheleznova.ka@ssau.ru"
+    },
+    "91": {
+        "name": "ЖИЖКИНА Елена Юрьевна",
+        "email": "jijkina.eyu@ssau.ru"
+    },
+    "92": {
+        "name": "ЖУКОВ Семен Викторович",
+        "email": "svzhukov@ssau.ru"
+    },
+    "93": {
+        "name": "ЗАБОЛОТНОВ Юрий Михайлович",
+        "email": "zabolotnov@ssau.ru"
     },
     "94": {
         "name": "ЗАГИДУЛЛИН Марсель Вакифович",
@@ -196,6 +431,86 @@
     "108": {
         "name": "ИВАНУШКИНА Светлана Александровна",
         "email": "ivanushkina.sa@ssau.ru"
+    },
+    "109": {
+        "name": "ИВАХНИК Валерий Владимирович",
+        "email": "Ivakhnik@ssau.ru"
+    },
+    "110": {
+        "name": "ИВАЩЕНКО Владимир Иванович",
+        "email": "ivatshenko.vi@ssau.ru"
+    },
+    "111": {
+        "name": "ИГОЛКИНА Нина Борисовна",
+        "email": "igolkina.nb@ssau.ru"
+    },
+    "112": {
+        "name": "ИЛЛАРИОНОВА Наталья Владимировна",
+        "email": "illarionova.nv@ssau.ru"
+    },
+    "113": {
+        "name": "ИЛЮХИН Владимир Николаевич",
+        "email": "ilyukhin.vn@ssau.ru"
+    },
+    "114": {
+        "name": "ИЛЮХИНА Надежда Алексеевна",
+        "email": "ilnadezhda@ssau.ru"
+    },
+    "115": {
+        "name": "ИНЮШКИН Алексей Николаевич",
+        "email": "inyushkin.an@ssau.ru"
+    },
+    "116": {
+        "name": "КАБЫТОВ Петр Серафимович",
+        "email": "kabitov.ps@ssau.ru"
+    },
+    "117": {
+        "name": "КАВЕЛЕНОВА Людмила Михайловна",
+        "email": "kavelenova.lm@ssau.ru"
+    },
+    "118": {
+        "name": "КАЗАНСКАЯ Анна Юрьевна",
+        "email": "anna@ssau.ru"
+    },
+    "119": {
+        "name": "КАЗАНСКИЙ Николай Львович",
+        "email": "kazanskiy@ssau.ru"
+    },
+    "120": {
+        "name": "КАЛМЫКОВА Диана Александровна",
+        "email": "kalmikova.da@ssau.ru"
+    },
+    "121": {
+        "name": "КАРЕЛИНА Марина Владимировна",
+        "email": "karelina@ssau.ru"
+    },
+    "122": {
+        "name": "КАРГИН Борис Владимирович",
+        "email": "kargin.bv@ssau.ru"
+    },
+    "123": {
+        "name": "КАШТАНОВА Елена Анатольевна",
+        "email": "kashtanova.ea@ssau.ru"
+    },
+    "124": {
+        "name": "КИРИЛЛОВ Алексей Владимирович",
+        "email": "aleksey.v.kirillov@ssau.ru"
+    },
+    "125": {
+        "name": "КИРПИЧЕВ Виктор Алексеевич",
+        "email": "dean_fla@ssau.ru"
+    },
+    "126": {
+        "name": "КИШОВ Евгений Алексеевич",
+        "email": "evgeniy.kishov@ssau.ru"
+    },
+    "127": {
+        "name": "КЛЕВЦОВ Дмитрий Владимирович",
+        "email": "klevcov.dv@ssau.ru"
+    },
+    "128": {
+        "name": "КЛЕВЦОВА Елена Владимировна",
+        "email": "klevtcova.ev@ssau.ru"
     },
     "129": {
         "name": "КЛЕНОВА Татьяна Владимировна",
@@ -317,6 +632,58 @@
         "name": "ЛОБАЧЕВ Анатолий Леонидович",
         "email": "lobachev@ssau.ru"
     },
+    "159": {
+        "name": "ЛОГИНОВА Ирина Анатольевна",
+        "email": "loginova.ia@ssau.ru"
+    },
+    "160": {
+        "name": "ЛОЩЕНКОВА Лариса Валентиновна",
+        "email": "lotshenkova.lv@ssau.ru"
+    },
+    "161": {
+        "name": "ЛУКАЧЕВ Сергей Викторович",
+        "email": "lukachev@ssau.ru"
+    },
+    "162": {
+        "name": "ЛУКИН Николай Федорович",
+        "email": "lukin.nf@ssau.ru"
+    },
+    "163": {
+        "name": "ЛЫШОВА Ольга Александровна",
+        "email": "lishova.oa@ssau.ru"
+    },
+    "164": {
+        "name": "ЛЮБИМОВ Владислав Васильевич",
+        "email": "lyubimov.vv@ssau.ru"
+    },
+    "165": {
+        "name": "МАЛАХОВА Татьяна Юрьевна",
+        "email": "malakhova.tyu@ssau.ru"
+    },
+    "166": {
+        "name": "МАЛКОВА Ирина Викторовна",
+        "email": "malkova.iv@ssau.ru"
+    },
+    "167": {
+        "name": "МАЛЫШЕВА Екатерина Николаевна",
+        "email": "malysheva.en@ssau.ru"
+    },
+    "168": {
+        "name": "МАРТЫШКИН Сергей Алексеевич",
+        "email": "martishkin.sa@ssau.ru"
+    },
+    "169": {
+        "name": "МАСЛОВА Анна Григорьевна",
+        "email": "maslova.ag@ssau.ru"
+    },
+    "170": {
+        "name": "МАТВЕЕВ Валерий Николаевич",
+        "email": "matveev.vn@ssau.ru"
+    },
+    "171": {
+        "name": "МАТВЕЕВ Сергей Геннадьевич",
+        "email": "msg@ssau.ru"
+    },
     "172": {
         "name": "МАТЮНИН Сергей Александрович",
         "email": "matyunin.sa@ssau.ru"
@@ -397,6 +764,82 @@
         "name": "НИКИТИН Василий Николаевич",
         "email": "niva@ssau.ru"
     },
+    "192": {
+        "name": "НОВИКОВА Юлия Дмитриевна",
+        "email": "novikova@ssau.ru"
+    },
+    "193": {
+        "name": "ОДИНЦОВА Людмила Владиславовна",
+        "email": "odin@ssau.ru"
+    },
+    "194": {
+        "name": "ОДОБЕСКУ Виктор Трофимович",
+        "email": "odobesku.vt@ssau.ru"
+    },
+    "195": {
+        "name": "ОРЛОВ Михаил Юрьевич",
+        "email": "orlov.myu@ssau.ru"
+    },
+    "196": {
+        "name": "ОРЛОВА Светлана Игоревна",
+        "email": "orlova.si@ssau.ru"
+    },
+    "197": {
+        "name": "ОСАДЧУК Ольга Алексеевна",
+        "email": "osadchuk.oa@ssau.ru"
+    },
+    "198": {
+        "name": "ОСИНСКАЯ Юлия Владимировна",
+        "email": "osinskaya.yuv@ssau.ru"
+    },
+    "199": {
+        "name": "ОСИПОВ Михаил Николаевич",
+        "email": "osipov.mn@ssau.ru"
+    },
+    "200": {
+        "name": "ОСИПОВА Анна Викторовна",
+        "email": "osipova.av@ssau.ru"
+    },
+    "201": {
+        "name": "ПАВЕЛЬЕВ Владимир Сергеевич",
+        "email": "nano@ssau.ru"
+    },
+    "202": {
+        "name": "ПАВЛОВ Валентин Федорович",
+        "email": "res_stress@ssau.ru"
+    },
+    "203": {
+        "name": "ПАВЛОВА Ирина Олеговна",
+        "email": "pavlova.io@ssau.ru"
+    },
+    "204": {
+        "name": "ПАВЛОВА Наталья Николаевна",
+        "email": "pnn@ssau.ru"
+    },
+    "205": {
+        "name": "ПАВЛУШКИН Алексей Александрович",
+        "email": "pavlushkin.aa@ssau.ru"
+    },
+    "206": {
+        "name": "ПАНИНА Евгения Сергеевна",
+        "email": "panina.es@ssau.ru"
+    },
+    "207": {
+        "name": "ПАНОВ Александр Николаевич",
+        "email": "panov.an@ssau.ru"
+    },
+    "208": {
+        "name": "ПАНЯВКИНА Юлия Александровна",
+        "email": "panyavkina.yua@ssau.ru"
+    },
+    "209": {
+        "name": "ПАРОВАЙ Федор Васильевич",
+        "email": "parovay.fv@ssau.ru"
+    },
+    "210": {
+        "name": "ПАРШИНА Александра Валерьевна",
+        "email": "parshina.av@ssau.ru"
+    },
     "211": {
         "name": "ПАШКОВ Дмитрий Евгеньевич",
         "email": "pashkov@ssau.ru"
@@ -460,6 +903,74 @@
     "226": {
         "name": "ПОРФИРЬЕВ Алексей Петрович",
         "email": "porfirev.ap@ssau.ru"
+    },
+    "227": {
+        "name": "ПОТАПОВА Галина Александровна",
+        "email": "potapova.ga@ssau.ru"
+    },
+    "228": {
+        "name": "ПРИВАЛОВ Александр Юрьевич",
+        "email": "privalov.ayu@ssau.ru"
+    },
+    "229": {
+        "name": "ПРОКОФЬЕВ Андрей Брониславович",
+        "email": "prok@ssau.ru"
+    },
+    "230": {
+        "name": "ПРОХОРОВ Александр Георгиевич",
+        "email": "prokhorov.ag@ssau.ru"
+    },
+    "231": {
+        "name": "ПРЯДИЛЬНИКОВА Наталья Викторовна",
+        "email": "pryadilnikova.nv@ssau.ru"
+    },
+    "232": {
+        "name": "ПУРЫГИН Петр Петрович",
+        "email": "purigin.pp@ssau.ru"
+    },
+    "233": {
+        "name": "ПУШКИН Денис Валериевич",
+        "email": "pushkin.dv@ssau.ru"
+    },
+    "234": {
+        "name": "ПЧЕЛКИНА Юлия Жиганшевна",
+        "email": "pchelkina.yuj@ssau.ru"
+    },
+    "235": {
+        "name": "РАДЬКО Владислав Михайлович",
+        "email": "radko.vm@ssau.ru"
+    },
+    "236": {
+        "name": "РАЗВЕЙКИНА Надежда Андреевна",
+        "email": "razveykina@ssau.ru"
+    },
+    "237": {
+        "name": "РАНЬЖИНА Полина Геннадьевна",
+        "email": "ranjina.pg@ssau.ru"
+    },
+    "238": {
+        "name": "РЕЗНИЧЕНКО Геннадий Алексеевич",
+        "email": "rezgen@ssau.ru"
+    },
+    "239": {
+        "name": "РЕЗНИЧЕНКО Мария Геннадьевна",
+        "email": "rezmary@ssau.ru"
+    },
+    "240": {
+        "name": "РЕЦКО Марина Александровна",
+        "email": "recko.ma@ssau.ru"
+    },
+    "241": {
+        "name": "РОДИНА Лариса Игоревна",
+        "email": "rodina_li@ssau.ru"
+    },
+    "242": {
+        "name": "РОДИОНОВ Леонид Валерьевич",
+        "email": "rodionov.lv@ssau.ru"
+    },
+    "243": {
+        "name": "РОМАНОВА Ирина Дмитриевна",
+        "email": "romanova.id@ssau.ru"
     },
     "244": {
         "name": "РОСТОВА Елена Павловна",
@@ -561,6 +1072,62 @@
         "name": "СТЕНЬКИНА Елена Алексеевна",
         "email": "stenkina.ea@ssau.ru"
     },
+    "269": {
+        "name": "СТЕПАНОВ Анатолий Николаевич",
+        "email": "stepanov.an@ssau.ru"
+    },
+    "270": {
+        "name": "СТЕФАНСКИЙ Евгений Евгеньевич",
+        "email": "stefanskiy.ee@ssau.ru"
+    },
+    "271": {
+        "name": "СТРОЙКИН Александр Николаевич",
+        "email": "stroykin@ssau.ru"
+    },
+    "272": {
+        "name": "СУВОРОВА Нина Ивановна",
+        "email": "suvorova.ni@ssau.ru"
+    },
+    "273": {
+        "name": "СУРКОВ Олег Станиславович",
+        "email": "surkov.os@ssau.ru"
+    },
+    "274": {
+        "name": "СУРКОВА Софья Сергеевна",
+        "email": "surkova.ss@ssau.ru"
+    },
+    "275": {
+        "name": "СУХАРЕВ Валерий Васильевич",
+        "email": "sukharev.vv@ssau.ru"
+    },
+    "276": {
+        "name": "СЫСУЕВА Елена Ивановна",
+        "email": "sisueva.ei@ssau.ru"
+    },
+    "277": {
+        "name": "ТАНДЕЙТНИК Ирина Ильинична",
+        "email": "tandeytnik.ii@ssau.ru"
+    },
+    "278": {
+        "name": "ТЕРЕХИНА Анжелика Петровна",
+        "email": "terekhina.ap@ssau.ru"
+    },
+    "279": {
+        "name": "ТИХОНОВ Герман Юрьевич",
+        "email": "tikhonov.gyu@ssau.ru"
+    },
+    "280": {
+        "name": "ТИЦ Сергей Николаевич",
+        "email": "intdep@ssau.ru"
+    },
+    "281": {
+        "name": "ТОЛСТИКОВА Татьяна Николаевна",
+        "email": "tolstikova_tn@ssau.ru"
+    },
+    "282": {
+        "name": "ТУЛУПОВА Наталья Евгеньевна",
+        "email": "tulupova.ne@ssau.ru"
+    },
     "283": {
         "name": "ТЮКАВКИН Николай Михайлович",
         "email": "tyukavkin.nm@ssau.ru"
@@ -604,6 +1171,50 @@
     "293": {
         "name": "ФУРСОВ Владимир Алексеевич",
         "email": "fursov.va@ssau.ru"
+    },
+    "294": {
+        "name": "ХАЙМОВИЧ Александр Исаакович",
+        "email": "khaymovich.ai@ssau.ru"
+    },
+    "295": {
+        "name": "ХАРДИН Михаил Викторович",
+        "email": "profso@ssau.ru"
+    },
+    "296": {
+        "name": "ХОВРИНА Марина Александровна",
+        "email": "khovrina.ma@ssau.ru"
+    },
+    "297": {
+        "name": "ХОРУНЖЕВА Наталья Александровна",
+        "email": "khorunjeva.na@ssau.ru"
+    },
+    "298": {
+        "name": "ЦИХ Татьяна Николаевна",
+        "email": "cikh.tn@ssau.ru"
+    },
+    "299": {
+        "name": "ЦЫЦАРЕВА Галина Федоровна",
+        "email": "cicareva.gf@ssau.ru"
+    },
+    "300": {
+        "name": "ЧЕБОТАРЕВ Сергей Давидович",
+        "email": "chebotarev.sd@ssau.ru"
+    },
+    "301": {
+        "name": "ЧЕКРЫЖЕВА Анжелика Владимировна",
+        "email": "267-43-20chekrijeva.av@ssau.ru"
+    },
+    "302": {
+        "name": "ЧУБЕНКО Светлана Владимировна",
+        "email": "chubenko.sv@ssau.ru"
+    },
+    "303": {
+        "name": "ШАБЛИЙ Леонид Сергеевич",
+        "email": "shabliy.ls@ssau.ru"
+    },
+    "304": {
+        "name": "ШАКИРОВ Фарид Мигдэтович",
+        "email": "bjd@ssau.ru"
     },
     "305": {
         "name": "ШАХМАТОВ Евгений Владимирович",

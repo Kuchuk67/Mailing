@@ -6,19 +6,21 @@ from typing import Optional
 import secrets
 
 
-class ClientTo:
+class ClientTo():
     """ Получает адреса клиентов   из файла JSON.
     атрибут self.json - при инициализации в него  загружается словарь е-mail'ов клиентов
-    из mailing/data/client.json.
+    по умолчанию из mailing/data/client.json. или указать file_json='client_new.json'
     Методы create_email_for_send, insert_clients.
     Установит атрибуты: self.count_all - обработанные клиенты,
+    self.count_ok -  успешно добавленные клиенты,
     self.count_error - количество ошибок при обработке.
     """
 
 
-    def __init__(self, task_id=0):
+    def __init__(self, task_id=0, file_json='client.json'):
         # Читать JSON из файла
-        fail_name_json = os.path.join(BASE_DIR, 'mailing', 'data', 'client.json')
+        self.file_json = file_json
+        fail_name_json = os.path.join(BASE_DIR, 'mailing', 'data', self.file_json)
         with open(fail_name_json, 'r', encoding='utf8') as file:
             try:
                 data = json.load(file)
@@ -78,17 +80,19 @@ class ClientTo:
         self.count_add = 0
         self.count_update = 0
         self.count_ok = 0
+
         # Взять данные одного клиента
         for client in self.json.values():
             self.count_all += 1
             # Найти его email в таблице, если нет - добавить
-            email = ClientTo.find_client(client['email'], client['name'], client['description'])
+            email = ClientTo.find_client(client['email'], client['name'], client.get('description'))
             if email :
                 # Добавить в таблицу EmailForSend
-                token = secrets.token_urlsafe(50)
-                email_to_send = EmailForSend.objects.create(client=email, task=self.task_id, token=token)
-                email_to_send.save()
-                self.count_all += 1
+                token = secrets.token_urlsafe(20)
+
+                email_to_send = EmailForSend.objects.create(client_id=email[0], task_id=self.task_id, token=token)
+                #email_to_send.save()
+                self.count_ok += 1
             else:
                 self.count_error += 1
         # Взять данные следующего клиента

@@ -6,20 +6,7 @@
 
 <div class="fon">
     <div class=" container-lg d-flex ">
-        <div class="col-md-6 p-3 d-flex justify-content-center">
-             {{ task.pk }}<br />
-             {{ task.name }}<br />
-             {{ task.message.created_at }}<br />
 
-
-<br /><br /><br />
-
-                <a href="{% url 'mailing:tasks' %}{% if page  %}?page={{ page }}{% endif %} " class="btn btn-secondary">Отмена</a>
-
-                <a class="btn btn-danger" href="# ">Удалить</a>
-
-
-        </div>
         <div class="col-md-6 p-3 border">
 
              <h1>Адреса для рассылок</h1>
@@ -43,14 +30,28 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    <a class="btn btn-danger" href="{% url 'mailing:client_delete_all' %} ">Удалить ВСЕХ</a>
-                    <a class="btn btn-primary" href="{% url 'mailing:client_insert' %} ">Добавить новых</a>
+                    <a class="btn btn-danger" href="{% url 'mailing:clients_for_task_remove' task_id %}  ">Удалить ВСЕХ</a>
+                    <a class="btn btn-primary" href=" {% url 'mailing:clients_for_task_insert' task_id %}   ">Добавить новых</a>
 
 
         </div>
+        <div class="col-md-6 p-3 d-flex justify-content-center">
+             {{ task.pk }}<br />
+             {{ task.name }}<br />
+             {{ task.message.created_at }}<br />
+
+
+              <br /><br /><br />
+
+                <a href="{% url 'mailing:tasks' %}{% if page  %}?page={{ page }}{% endif %} " class="btn btn-secondary">Отмена</a>
+
+                <a class="btn btn-danger" href="# ">Удалить</a>
+
 
         </div>
 
     </div>
+
+</div>
 
 {% endblock %}

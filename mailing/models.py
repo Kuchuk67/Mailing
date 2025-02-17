@@ -66,6 +66,9 @@ class EmailForSend(models.Model):
     def __str__(self):
         return {self.client}
 
+    class  Meta:
+        unique_together = [('task', 'client')]
+
 
 class Attempt(models.Model):
     attempt_at = models.DateTimeField(auto_now_add=True, verbose_name="время рассылки")
