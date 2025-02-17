@@ -50,4 +50,4 @@ class TaskForClientsView(DetailView):
     context_object_name = 'task'
     extra_context = {"active_menu": "task"}
     template_name = 'mailing/tasks/task_for_clients.html'
-    print()
+

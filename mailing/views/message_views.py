@@ -23,8 +23,9 @@ class MessageListView(ListView):
             x = Task.objects.filter(message=message.pk).count()
             print(x)
         print("+++")
-        x = Task.objects.all().distinct().count()
-            # self.object.task_set.all()
+        x = Task.objects.distinct('message')
+        print(x)
+        # self.object.task_set.all()
         # print(context['messages'][0].text_mail)
         return context
 
