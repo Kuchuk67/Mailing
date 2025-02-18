@@ -22,12 +22,12 @@
                         <tbody>
                              {% include 'pagination.html' %}
                             {% for task in tasks %}
-                            <tr {% if task.status == 'created' %} class="bs-danger-bg-subtle" {% endif %}
-                              {% if task.status == 'start' %} class="bs-danger-bg-subtle" {% endif %}>
+                            <tr>
                                 <td><b><a href="{{ task.id }}">{{ task.name }}</a></b><br />{{ task.message }}</td>
                                 <td>{{ task.start_at | date:"d M Y H:i" }}</td>
                                 <td>{{ task.end_at | date:"d M Y H:i" }}</td>
-                                <td>{{ task.get_status_display }}</td>
+                                <td {% if task.status == 'created' %} class="bg_yel" {% endif %}
+                              {% if task.status == 'start' %} class="bg_rose" {% endif %}>{{ task.get_status_display }}</td>
                                 <td  style="text-align: center;"><a class="min-botton btn btn-secondary" href="{{ task.id }}/clients/{% if page %}?page={{ page }}{% endif %}  ">
                                     {% for counter in clients_counter %}
                                         {% if counter.task_id == task.id %}

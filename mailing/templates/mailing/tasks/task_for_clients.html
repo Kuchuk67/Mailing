@@ -30,9 +30,11 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    <a class="btn btn-danger" href="{% url 'mailing:clients_for_task_remove' task_id %}  ">Удалить ВСЕХ</a>
-                    <a class="btn btn-primary" href=" {% url 'mailing:clients_for_task_insert' task_id %}   ">Добавить новых</a>
 
+                    <a class="btn btn-primary mt-3" href=" {% url 'mailing:clients_for_task_insert' task_id %}   ">Добавить из файла</a>
+                    <a class="btn btn-primary mt-3" href=" {% url 'mailing:clients_for_task_insert' task_id %}   ">Добавить всех из списка</a>
+                    <a class="btn btn-danger mt-3" href="{% url 'mailing:clients_for_task_remove' task_id %}  ">Удалить ВСЕХ</a>
+                    <a class="btn btn-secondary mt-3" href="{% url 'mailing:tasks' %}  ">Вернутся</a>
 
         </div>
         <div class="col-md-6 p-3 d-flex justify-content-center">

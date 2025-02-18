@@ -1,3 +1,5 @@
+from django.db import IntegrityError
+
 from config.settings import BASE_DIR
 import json
 import os
@@ -8,18 +10,32 @@ import secrets
 
 class ClientTo():
     """ Получает адреса клиентов   из файла JSON.
-    атрибут self.json - при инициализации в него  загружается словарь е-mail'ов клиентов
+    Установит атрибут self.json - при инициализации в него  загружается словарь е-mail'ов клиентов
     по умолчанию из mailing/data/client.json. или указать file_json='client_new.json'
-    Методы create_email_for_send, insert_clients.
+    Методы: create_email_for_send - добавит mail в список(если его там нет) и привяжет к рассылке с ID указаному в параметре task_id ,
+    insert_clients - только добавит в список(если его там нет).
     Установит атрибуты: self.count_all - обработанные клиенты,
     self.count_ok -  успешно добавленные клиенты,
     self.count_error - количество ошибок при обработке.
     """
 
+    # Атрибуты метода
+    @staticmethod
+    def remove():
+        ClientTo.count_all = 0  # Всего обработано адресов
+        ClientTo.count_error = 0  # Ошибка при обработке адреса
+        ClientTo.count_add = 0  # Добавлено новых в список адресов
+        ClientTo.count_update = 0  # Обновлено в списке адресов
+        ClientTo.count_ok = 0  # Успешно Обработанные адреса
+        ClientTo.count_duble = 0  # Такие адреса уже в списке
 
-    def __init__(self, task_id=0, file_json='client.json'):
+    def __init__(self, task_id:int=0, file_json='client.json'):
+
+        self.file_json = file_json # имя файла с адресами
+        self.task_id = task_id  # ID рассылки при привязке адреса к рассылке
+        ClientTo.remove()
+
         # Читать JSON из файла
-        self.file_json = file_json
         fail_name_json = os.path.join(BASE_DIR, 'mailing', 'data', self.file_json)
         with open(fail_name_json, 'r', encoding='utf8') as file:
             try:
@@ -27,12 +43,7 @@ class ClientTo():
             except Exception as e:
                 print(e)
             self.json = data
-        self.task_id = task_id
-        self.count_all = 0
-        self.count_error = 0
-        self.count_add = 0
-        self.count_update = 0
-        self.count_ok = 0
+
 
 
     @staticmethod
@@ -71,15 +82,11 @@ class ClientTo():
 
 
     def create_email_for_send(self):
-        """ Создает связующую таблицу е-mail'ов и рассылки (self.task_id)
+        """ Наполняет связующую таблицу е-mail'ов и рассылки (self.task_id)
         Наполняет таблицу EmailForSend
-        Если пользователя нет в таблице Client - добавляет.
+        Если пользователя нет в списке Client - добавляет его.
         """
-        self.count_all = 0
-        self.count_error = 0
-        self.count_add = 0
-        self.count_update = 0
-        self.count_ok = 0
+        ClientTo.remove()
 
         # Взять данные одного клиента
         for client in self.json.values():
@@ -89,10 +96,15 @@ class ClientTo():
             if email :
                 # Добавить в таблицу EmailForSend
                 token = secrets.token_urlsafe(20)
+                try:
+                    EmailForSend.objects.create(client_id=email[0], task_id=self.task_id, token=token)
+                except IntegrityError:
+                    self.count_duble += 1
 
-                email_to_send = EmailForSend.objects.create(client_id=email[0], task_id=self.task_id, token=token)
+                else:
+                    self.count_ok += 1
                 #email_to_send.save()
-                self.count_ok += 1
+
             else:
                 self.count_error += 1
         # Взять данные следующего клиента
@@ -100,11 +112,8 @@ class ClientTo():
 
     def insert_clients(self):
         """ Добавляет пользователя в таблицу Client"""
-        self.count_all = 0
-        self.count_error = 0
-        self.count_add = 0
-        self.count_update = 0
-        self.count_ok = 0
+        ClientTo.remove()
+
         # Взять данные одного клиента
         for client in self.json.values():
             self.count_all += 1

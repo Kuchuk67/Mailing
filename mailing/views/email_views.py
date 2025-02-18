@@ -33,14 +33,13 @@ class EmailForSendInsertView(View):
     #model = EmailForSend
     def get(self, request, *args, **kwargs):
         task_id = int(self.kwargs['task'])
-        #print(task_id)
         json_mail = ClientTo(task_id=task_id, file_json='client_new.json')
         json_mail.create_email_for_send()
         return render(request, 'mailing/tasks/clientname_insert_report.html',
                       {'count_all': json_mail.count_all,
                        'count_error': json_mail.count_error,
                        "active_menu": "task",
-                       #'count_add': json_mail.count_add,
+                       'count_duble': json_mail.count_duble,
                        #'count_update': json_mail.count_update,
                        'count_ok': json_mail.count_ok,
                        'task_id': task_id,
