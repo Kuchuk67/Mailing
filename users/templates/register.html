@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="fon">
+    <div class=" container-lg">
+        <div class="title  d-flex  flex-column justify-content-center">
+            <h2>Регистрация</h2>
+        </div>
+
+              <form method="post" class="form_sm">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+              </form>
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

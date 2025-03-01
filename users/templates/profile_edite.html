@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="fon">
+    <div class=" container-lg">
+        <div class="title  d-flex  flex-column justify-content-center">
+            <h2>Профайл. Личные данные</h2>
+              <h5 class="card-title">
+                        {{ object }}
+                    </h5>
+        </div>
+
+
+             <form method="post"  enctype="multipart/form-data" class="form_sm">
+                 {% csrf_token %}
+                 <p>Имя:
+                     {{ form.username }}
+                     {% if form.username.errors %}
+                        {% for error in form.username.errors %}
+		                    <div class="errorlist">• {{ error }}</div>
+                        {% endfor %}
+                     {% endif %}
+                 </p>
+                 <p>E-mail:
+                 {{ form.email }}
+                 {% if form.email.errors %}
+                        {% for error in form.email.errors %}
+		                    <div class="errorlist">• {{ error }}</div>
+                        {% endfor %}
+                  {% endif %}
+                 </p>
+
+                 {% if user.avatar %}
+                        <div class=""><img src="/media/{{ user.avatar }}" width="100px"></div>
+                    {% else %}
+                        <div style="background: #444;width: 100px;"><img src="/media/avatars/no_user.png" width="100" ></div>
+                    {% endif %}
+                 <p>Аватарка:<br />
+
+
+
+                 {{ form.avatar }}
+                 {% if form.avatar.errors %}
+                        {% for error in form.avatar.errors %}
+		                    <div class="errorlist">• {{ error }}</div>
+                        {% endfor %}
+                  {% endif %}
+                 </p>
+                 <p>Страна:
+                 {{ form.country }}
+                 </p>
+                 <p>Телефон:
+                 {{ form.number_phone }}
+                 </p>
+                  {% if form.number_phone.errors %}
+                        {% for error in form.number_phone.errors %}
+                        <div class="errorlist">• {{ error }}</div>
+                        {% endfor %}
+                  {% endif %}
+                 <button class="btn btn-primary" type="submit">Сохранить</button>
+                 <a href="{% url 'catalog:product' %}" class="btn btn-secondary">Отмена</a>
+              </form>
+
+
+
+
+                    <!-- <div class="card-text">
+                        <ul>
+                            <li>Имя: {{ object.username }}</li>
+                            <li>Страна: {{ object.country }}</li>
+                            <li>Аватарка: {{ object.avatar }}</li>
+
+                        </ul>
+                    <a href="{% url 'users:login' %}" class="btn btn-sm btn-primary">Редактировать профиль</a>
+                    </div>-->
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

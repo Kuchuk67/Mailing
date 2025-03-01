@@ -50,8 +50,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_ckeditor_5',
-    'mailing'
+    'mailing',
+    "users",
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
+LOGOUT_REDIRECT_URL = 'mailing:tasks'
+LOGIN_REDIRECT_URL = 'mailing:tasks'
+LOGIN_URL = 'users:login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
