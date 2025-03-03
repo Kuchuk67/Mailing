@@ -1,3 +1,5 @@
+from msilib.schema import Class
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Count
 from django.urls import reverse_lazy
@@ -36,13 +38,15 @@ class TaskDetailsView(LoginRequiredMixin, DetailView):
     extra_context = {"active_menu": "task"}
 
 
-class TaskCreateView(LoginRequiredMixin, CreateView):
-    """def __int__(self, request):
-        TaskCreateView.user_id = self.request.user.id
-        return super().__int__(self, request)
-"""
+class TaskCreateView(LoginRequiredMixin,  CreateView):
+
+    # передаем в форму грёбаного пользователя
+    def get_form_kwargs(self, *args, **kwargs):
+        form_kwargs = super(TaskCreateView, self).get_form_kwargs()
+        form_kwargs['initial'] = {'user_pk':  self.request.user.pk}
+        return form_kwargs
+
     model = Task
-    #user_id = 1
     form_class = TaskForm
     success_url = reverse_lazy('mailing:tasks')
     extra_context = {"active_menu": "task"}

@@ -65,12 +65,12 @@ INSTALLED_APPS = [
     'django_ckeditor_5',
     'mailing',
     "users",
-    'widget_tweaks',
+    #'widget_tweaks',
     #'has_group',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
-LOGOUT_REDIRECT_URL = 'mailing:tasks'
+LOGOUT_REDIRECT_URL = 'mailing:messages'
 LOGIN_REDIRECT_URL = 'mailing:tasks'
 LOGIN_URL = 'users:login'
 
@@ -111,6 +111,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'ENGINE': 'django.db.backends.sqlite3',
         'NAME': SQL_DATABASE,
         'USER': SQL_USER,
         'PASSWORD': SQL_PASS,
