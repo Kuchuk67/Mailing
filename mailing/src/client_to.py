@@ -47,7 +47,9 @@ class ClientTo():
 
 
     @staticmethod
-    def find_client(client_email, client_name, client_description='') -> tuple[str, str]:
+    def find_client(client_email, client_name, user_id, client_description='') -> tuple[str, str, int]:
+
+
         """ Находит пользователя в таблице Client по e-mail'у, если нет - добавляет.
         Возвращает email, статус:
         new - новый клиент;
@@ -55,14 +57,15 @@ class ClientTo():
         ok - клиент найден;
         update - обновление данных клиента."""
         client_email = client_email.strip()
+
         client = ClientName.objects.filter(email=client_email).first()
         if client is None:
             try:
-                client = ClientName.objects.create(email=client_email, name=client_name, description=client_description)
+                client = ClientName.objects.create( email=client_email, user=user_id, name=client_name, description=client_description)
                 client.save()
                 status = 'new'
             except Exception as e:
-                print(e, "Ошибка: не добавлен клиент ", client_email, client_name, client_description)
+                print(e, "Ошибка: не добавлен клиент ", client_email, user_id, client_name, client_description)
                 client.email = ''
                 status = 'error'
         else:
@@ -78,10 +81,10 @@ class ClientTo():
             if save:
                 client.save()
                 status = 'update'
-        return client.email, status
+        return client.email, status, client.id
 
 
-    def create_email_for_send(self):
+    def create_email_for_send(self, user_id):
         """ Наполняет связующую таблицу е-mail'ов и рассылки (self.task_id)
         Наполняет таблицу EmailForSend
         Если пользователя нет в списке Client - добавляет его.
@@ -91,13 +94,14 @@ class ClientTo():
         # Взять данные одного клиента
         for client in self.json.values():
             self.count_all += 1
+
             # Найти его email в таблице, если нет - добавить
-            email = ClientTo.find_client(client['email'], client['name'], client.get('description'))
+            email = ClientTo.find_client(client['email'], client['name'], user_id, client.get('description'))
             if email :
                 # Добавить в таблицу EmailForSend
                 token = secrets.token_urlsafe(20)
                 try:
-                    EmailForSend.objects.create(client_id=email[0], task_id=self.task_id, token=token)
+                    EmailForSend.objects.create(client_id=email[2], task_id=self.task_id, token=token)
                 except IntegrityError:
                     self.count_duble += 1
 
@@ -110,7 +114,7 @@ class ClientTo():
         # Взять данные следующего клиента
 
 
-    def insert_clients(self):
+    def insert_clients(self, user_id):
         """ Добавляет пользователя в таблицу Client"""
         ClientTo.remove()
 
@@ -118,7 +122,7 @@ class ClientTo():
         for client in self.json.values():
             self.count_all += 1
             # Найти его ID в таблице, если нет - добавить
-            email,status = ClientTo.find_client(client.get('email'), client.get('name'), client.get('description'))
+            email,status, id_ = ClientTo.find_client(client.get('email'), client.get('name'), user_id,  client.get('description'))
             # сохраняем результат
             if status == 'error':
                 self.count_error += 1

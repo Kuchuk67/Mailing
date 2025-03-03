@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task
@@ -8,12 +9,14 @@ from django.db.models import Count, Sum, Avg, Max, Min
 # Views for model Message
 
 
-class MessageListView(ListView):
+class MessageListView(LoginRequiredMixin, ListView):
     model = Message
     context_object_name = 'messages'
     template_name = 'mailing/message/message_list.html'
     paginate_by = 15
     extra_context = {"active_menu": "messages"}
+    def get_queryset(self):
+        return Message.objects.filter(user=self.request.user)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -24,7 +27,7 @@ class MessageListView(ListView):
         return context
 
 
-class MessageCreateView(CreateView):
+class MessageCreateView(LoginRequiredMixin, CreateView):
     model = Message
     form_class = MessageForm
     success_url = reverse_lazy('mailing:messages')
@@ -32,8 +35,12 @@ class MessageCreateView(CreateView):
     extra_context = {'title': "Создать новый текст рассылки",
                      "active_menu": "messages",}
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
-class MessageUpdateView(UpdateView):
+
+class MessageUpdateView(LoginRequiredMixin, UpdateView):
     model = Message
     form_class = MessageForm
     success_url = reverse_lazy('mailing:messages')
@@ -42,7 +49,7 @@ class MessageUpdateView(UpdateView):
                      "active_menu": "messages",}
 
 
-class MessageDeleteView(DeleteView):
+class MessageDeleteView(LoginRequiredMixin, DeleteView):
     model = Message
     success_url = reverse_lazy('mailing:messages')
     template_name = 'mailing/message/message_confirm_delete.html'

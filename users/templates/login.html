@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+{% load widget_tweaks %}
 
 <div class="fon">
     <div class=" container-lg">
@@ -11,6 +12,8 @@
               <form method="post"  class="form_sm_login">
                 {% csrf_token %}
                 {{ form.as_p }}
+
+                <button class="btn btn-primary" type="submit">Войти</button
                 <button class="btn btn-primary" type="submit">Войти</button>
               </form>
 

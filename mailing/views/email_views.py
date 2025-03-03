@@ -34,7 +34,8 @@ class EmailForSendInsertView(View):
     def get(self, request, *args, **kwargs):
         task_id = int(self.kwargs['task'])
         json_mail = ClientTo(task_id=task_id, file_json='client_new.json')
-        json_mail.create_email_for_send()
+        #user_id = self.request.user.pk
+        json_mail.create_email_for_send(self.request.user)
         return render(request, 'mailing/tasks/clientname_insert_report.html',
                       {'count_all': json_mail.count_all,
                        'count_error': json_mail.count_error,
