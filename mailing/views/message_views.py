@@ -47,6 +47,8 @@ class MessageUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'mailing/message/message_form.html'
     extra_context = {'title': "Редактировать текст рассылки",
                      "active_menu": "messages",}
+    def get_queryset(self):
+        return Message.objects.filter(user=self.request.user)
 
 
 class MessageDeleteView(LoginRequiredMixin, DeleteView):
@@ -54,3 +56,5 @@ class MessageDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('mailing:messages')
     template_name = 'mailing/message/message_confirm_delete.html'
     extra_context = {"active_menu": "messages"}
+
+

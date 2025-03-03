@@ -60,6 +60,10 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
     extra_context = {"active_menu": "task"}
     template_name = 'mailing/tasks/task_form.html'
 
+    """def get_queryset(self):
+        print('****',self.request.user)
+        return Message.objects.filter(user=self.request.user)"""
+
 
 class TaskDeleteView(LoginRequiredMixin, DeleteView):
     model = Task
