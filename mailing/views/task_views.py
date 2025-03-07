@@ -20,12 +20,7 @@ class TaskListView(LoginRequiredMixin, ListView):
     template_name = 'mailing/tasks/task_list.html'
     extra_context = {"active_menu": "task"}
 
-    def get(self, request, *args, **kwargs):
 
-        if request.GET.get('send'):
-            send_email_to_clients(self, request.GET.get('send'))#request.GET.get('send')
-
-        return  super(TaskListView, self).get(request, *args, **kwargs)
 
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user)
@@ -71,9 +66,14 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
     extra_context = {"active_menu": "task"}
     template_name = 'mailing/tasks/task_form.html'
 
-    """def get_queryset(self):
-        print('****',self.request.user)
-        return Message.objects.filter(user=self.request.user)"""
+    def get(self, request, *args, **kwargs):
+
+        if request.GET.get('send'):
+            send_email_to_clients(self, request.GET.get('send'))#request.GET.get('send')
+
+        return  super(TaskUpdateView, self).get(request, *args, **kwargs)
+
+
 
 
 class TaskDeleteView(LoginRequiredMixin, DeleteView):

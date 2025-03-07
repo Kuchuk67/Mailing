@@ -46,7 +46,7 @@
             <hr />
                     {{ object.message.text_mail | safe }}
 
-            <a href="{% url 'mailing:tasks' %}?send={{ task.id }}" class="btn btn-primary">Отправить сейчас</a>
+            <a href="{% url 'mailing:task_edit' task.id %}?send={{ task.id }}" class="btn btn-primary">Отправить сейчас</a>
         </div>
 
         </div>
