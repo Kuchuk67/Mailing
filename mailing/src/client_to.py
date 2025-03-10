@@ -58,7 +58,7 @@ class ClientTo():
         update - обновление данных клиента."""
         client_email = client_email.strip()
 
-        client = ClientName.objects.filter(email=client_email).first()
+        client = ClientName.objects.filter(email=client_email).filter(user=user_id).first()
         if client is None:
             try:
                 client = ClientName.objects.create( email=client_email, user=user_id, name=client_name, description=client_description)

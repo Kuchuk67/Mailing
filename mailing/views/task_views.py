@@ -28,7 +28,7 @@ class TaskListView(LoginRequiredMixin, ListView):
         page = self.request.GET.get('page')
         context['page'] = page
         context['clients_counter'] = EmailForSend.objects.values('task_id').order_by('task_id').annotate(field_count=Count('task_id'))
-        print(context['clients_counter'])
+        # print(context['clients_counter'])
         return context
 
 
@@ -64,9 +64,10 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
     extra_context = {"active_menu": "task"}
     template_name = 'mailing/tasks/task_form.html'
 
-    """def get_queryset(self):
-        print('****',self.request.user)
-        return Message.objects.filter(user=self.request.user)"""
+    def get_form_kwargs(self, *args, **kwargs):
+        form_kwargs = super(TaskUpdateView, self).get_form_kwargs()
+        form_kwargs['initial'] = {'user_pk':  self.request.user.pk}
+        return form_kwargs
 
 
 class TaskDeleteView(LoginRequiredMixin, DeleteView):

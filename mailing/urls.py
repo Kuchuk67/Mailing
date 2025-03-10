@@ -39,6 +39,7 @@ urlpatterns = [
 
 # Модерация - Задачи
     path('moderation/', views.ModerationTaskListView.as_view(), name='moderation_tasks'),
+    path('moderation/<int:pk>', views.ModerationTaskUpdateView.as_view(), name='task_edit'),
 
 
 

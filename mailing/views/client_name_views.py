@@ -64,11 +64,12 @@ class UnsubscribeDetailView(LoginRequiredMixin, DetailView):
 
 class DeleteAllClientView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
+        user_id = self.request.user.pk
         if request.method == 'POST':
             form = DeleteObjectForm(request.POST)
             if form.is_valid():
                 # Удаляем все объекты модели
-                ClientName.objects.all().delete()
+                ClientName.objects.filter(user=user_id).delete()
                 # Перенаправляем пользователя на другую страницу после удаления
                 return redirect('mailing:clients')
     def get(self, request, *args, **kwargs):

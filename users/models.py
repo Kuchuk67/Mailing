@@ -14,3 +14,7 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email
+
+    @property
+    def user_is_active(self):
+        return  self.is_active

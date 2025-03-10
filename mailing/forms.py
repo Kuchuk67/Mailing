@@ -18,17 +18,6 @@ class TaskForm(forms.ModelForm):
         self.fields['message'].queryset = Message.objects.filter(user=user_pk)
 
 
-    """def __init__(self,  *args, **kwargs):
-        super().__init__(*args, **kwargs)  # populates the post
-        #print('-***********', self.initial['user'])
-        #try:
-        self.fields['message'].queryset = Message.objects.filter(user=self.initial['user'])
-        #except:
-            #..."""
-
-
-
-
 
     start_at = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local', 'title':  'дата создания'},
                                           format='%Y-%m-%dT%H:%M'), label='Время начала рассылки'  )
@@ -56,7 +45,17 @@ class TaskForm(forms.ModelForm):
 """
         #print(start_at.strftime('%Y-%m-%d %H:%M:%S'), str(datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")))
         if status == 'created' and start_at.strftime('%Y-%m-%d %H:%M:%S') < datetime.now().strftime('%Y-%m-%d %H:%M:%S'):
-            self.add_error('end_at', 'При запуске рассылки установите время начала больше текущего')
+            self.add_error('start_at', 'При запуске рассылки установите время начала больше текущего')
+
+class ModerationTaskForm(forms.ModelForm):
+
+
+    class Meta:
+        model = Task
+        input_formats = ['%Y-%m-%dT%H:%M:%SZ']
+        fields = ['status']
+        #exclude = ['user']
+
 
 
 class MessageForm(forms.ModelForm):
