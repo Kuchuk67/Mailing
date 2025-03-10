@@ -7,7 +7,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task, EmailForSend
 from django.views.generic import ListView, DetailView
 from ..forms import TaskForm
-
+from ..services.send_email import send_email_to_clients
 
 
 # Views for model Task
@@ -20,6 +20,13 @@ class TaskListView(LoginRequiredMixin, ListView):
     template_name = 'mailing/tasks/task_list.html'
     extra_context = {"active_menu": "task"}
 
+    def get(self, request, *args, **kwargs):
+
+        if request.GET.get('send'):
+            send_email_to_clients(self, request.GET.get('send'))#request.GET.get('send')
+
+        return  super(TaskListView, self).get(request, *args, **kwargs)
+
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user)
 
@@ -28,7 +35,7 @@ class TaskListView(LoginRequiredMixin, ListView):
         page = self.request.GET.get('page')
         context['page'] = page
         context['clients_counter'] = EmailForSend.objects.values('task_id').order_by('task_id').annotate(field_count=Count('task_id'))
-        # print(context['clients_counter'])
+        #print(context['clients_counter'])
         return context
 
 
