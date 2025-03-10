@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from ..models import ClientName, Message, Task, EmailForSend, CustomUser
+#from  django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView
 from ..forms import  ModerationTaskForm
 
@@ -56,3 +57,23 @@ class ModerationTaskUpdateView(LoginRequiredMixin, UpdateView):
         form_kwargs = super(ModerationTaskUpdateView, self).get_form_kwargs()
         form_kwargs['initial'] = {'user_pk': self.request.user.pk}
         return form_kwargs
+
+
+class ModerationUserListView(LoginRequiredMixin, ListView):
+    model = CustomUser
+    context_object_name = 'users'
+    paginate_by = 10
+    template_name = 'mailing/users/user_list_moderator.html'
+    extra_context = {"active_menu": "users"}
+
+    def post(self, request, *args, **kwargs):
+        # деактивировать/активировать пользователя
+        user_id = request.POST.get('user')
+        user = CustomUser.objects.get(id=user_id)
+        if user.is_active:
+            user.is_active = False
+        else:
+            user.is_active = True
+        user.save()
+
+        return redirect('mailing:moderation_users')

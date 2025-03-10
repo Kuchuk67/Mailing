@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% include 'menu.html' %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Логи рассылок</h1>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Задача</th>
+                                <th>Дата</th>
+                                <th>Статус</th>
+                                <th>Ответ сервера</th>
+                                <th>Кол. писем</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% include 'pagination.html' %}
+                            {% for attempt in attempts %}
+                            <tr>
+                                <td>  {{ attempt.task_send.name }}  </td>
+                                <td>{{ attempt.attempt_at | date:"d-M-Y h:m:s"  }}</td>
+                                <td>{{ attempt.success  }}</td>
+                                <td>{{ attempt.response }}</td>
+                                <td>{{ attempt.len_mail }}</td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                 </div>
+            </div>
+
+        </div>
+    {% endblock %}

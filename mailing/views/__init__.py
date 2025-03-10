@@ -4,3 +4,4 @@ from .task_views import *
 from .analitic_views import *
 from .email_views import *
 from  .moderation_views import *
+from  .attempt_view import *

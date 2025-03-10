@@ -1,15 +1,19 @@
-from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+from django.views.generic import UpdateView
+
+
 from .models import CustomUser
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from config import settings
 from django.core.mail import send_mail
-from .forms import SignUpForm
+from .forms import SignUpForm, UserUpdateForm
 import secrets
 from config import settings
 from django.shortcuts import redirect
 from django.contrib.auth.views import LoginView
-
+from django.urls import reverse_lazy, reverse
 
 
 
@@ -42,7 +46,6 @@ class SignUpView(CreateView):
         return super().form_valid(form)
 
 
-
 def activate_user(request):
     if request.method == 'GET':
         token = request.GET.get('token')
@@ -54,4 +57,31 @@ def activate_user(request):
 
             user.save()
     return redirect('users:login')
+
+
+
+
+
+
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
+    model = CustomUser
+    form_class = UserUpdateForm
+    success_url = reverse_lazy('mailing:tasks')
+    template_name = 'profile_edite.html'
+    path_img_temp = None
+
+
+
+    # Определяем текущего пользователя и грузим только его
+    def get_object(self, queryset=None):
+        """queryset = self.get_queryset()
+        queryset = queryset.filter(pk=self.request.user.pk)
+        return queryset.get()"""
+        return self.request.user
+
+
+    def get_success_url(self):
+        return reverse('mailing:analitic')
+
+
 

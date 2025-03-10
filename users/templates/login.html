@@ -8,17 +8,12 @@
         <div class="title  d-flex  flex-column justify-content-center">
             <h2>Войти</h2>
         </div>
-
               <form method="post"  class="form_sm_login">
                 {% csrf_token %}
                 {{ form.as_p }}
-
                 <button class="btn btn-primary" type="submit">Войти</button
-                <button class="btn btn-primary" type="submit">Войти</button>
               </form>
-
-
-
+        <a href="{% url 'users:reset_password' %}">Забыли пароль....</a>
 
     </div>
 </div>

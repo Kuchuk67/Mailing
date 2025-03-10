@@ -70,8 +70,8 @@ INSTALLED_APPS = [
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
-LOGOUT_REDIRECT_URL = 'mailing:messages'
-LOGIN_REDIRECT_URL = 'mailing:tasks'
+LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'mailing:analitic'
 LOGIN_URL = 'users:login'
 
 MIDDLEWARE = [

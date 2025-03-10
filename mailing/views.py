@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from .models import ClientName, Message, Task
@@ -7,6 +8,8 @@ from django.shortcuts import render
 # Create your views here.
 
 # Views for model - ClientName
+
+
 
 
 

@@ -7,19 +7,24 @@
         <li class="nav-item"><a href="/mailing/client/" class="nav-link {% if active_menu == 'client' %} active {% endif %}">Клиенты</a></li>
         <li class="nav-item"><a href="/mailing/message/" class="nav-link {% if active_menu == 'messages' %} active {% endif %}">Тексты</a></li>
         <li class="nav-item"><a href="/mailing/task/" class="nav-link {% if active_menu == 'task' %} active {% endif %}">Планировка рассылок</a></li>
-        {% if  request.user|has_group:"Модератор" %}
+        <li class="nav-item"><a href="/mailing/log/" class="nav-link {% if active_menu == 'attempt' %} active {% endif %}">Логи</a></li>
+
+          {% if  request.user|has_group:"Модератор" %}
           <li class="nav-item"><a href="{% url 'mailing:moderation_tasks' %}"  class="nav-link {% if active_menu == 'moderation' %} active {% endif %}">Модерация</a></li>
+          <li class="nav-item"><a href="{% url 'mailing:moderation_users' %}" class="nav-link {% if active_menu == 'users' %} active {% endif %}">Пользователи</a></li>
+
           {% endif %}
           {% if not user.is_authenticated %}
             <li class="nav-item"><a href="{% url 'users:login' %}" class="nav-link ">Войти</a></li>
           <li class="nav-item"><a href="{% url 'users:signup' %}" class="nav-link ">Регистрация</a></li>
           {% else %}
-
+          <li class="nav-item"><a href="{% url 'users:profile' %}" class="nav-link ">Профиль</a></li>
           <form method="post" action="{% url 'users:logout' %}">
                         {% csrf_token %}
                         <button type="submit" class="nav-link dropdown-item">Выход</button>
                     </form>
           {% endif %}
+
 
       </ul>
     </header>

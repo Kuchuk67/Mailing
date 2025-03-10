@@ -1,8 +1,7 @@
 
 from django.urls import path
 from mailing import views
-from django.conf import settings
-from django.conf.urls.static import static
+
 
 
 app_name = 'mailing'
@@ -37,9 +36,14 @@ urlpatterns = [
     path('task/<int:task>/clients/insert', views.EmailForSendInsertView.as_view(), name='clients_for_task_insert'),
     path('task/<int:task>/clients/remove', views.EmailForSendDeleteView.as_view(), name='clients_for_task_remove'),
 
+    # Логи
+    path('log/', views.AttemptListView.as_view(), name='log'),
+
 # Модерация - Задачи
     path('moderation/', views.ModerationTaskListView.as_view(), name='moderation_tasks'),
     path('moderation/<int:pk>', views.ModerationTaskUpdateView.as_view(), name='task_edit'),
+# Модерация - Юзеры
+    path('moderation/user', views.ModerationUserListView.as_view(), name='moderation_users'),
 
 
 

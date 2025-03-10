@@ -81,10 +81,12 @@ class Attempt(models.Model):
     attempt_at = models.DateTimeField(auto_now_add=True, verbose_name="время рассылки")
     success = models.BooleanField(verbose_name='статус операции')
     response = models.CharField(max_length=250, verbose_name="ответ сервера")
-    email_for_send = models.ForeignKey(EmailForSend, on_delete=models.CASCADE, related_name="mail_for_send")
+    task_send = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="mail_for_send")
+    len_mail = models.IntegerField(blank=True, null=True, verbose_name='Количество отправленных писем')
+
 
     def __str__(self):
-        return f"{self.email_for_send} - {self.success}"
+        return f"{self.task_send} - {self.success}"
 
     class Meta():
         verbose_name = 'Попытка'
