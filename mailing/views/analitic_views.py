@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.views import View
 from mailing.models import ClientName, Attempt, Task, EmailForSend
 from mailing.src.client_to import ClientTo
+from django.db.models import Sum
 
 
 def home(request):
@@ -15,7 +16,7 @@ class AnaliticView(LoginRequiredMixin,View):
     def get(self, request, *args, **kwargs):
         # Собираем аналитику
         # количество писем
-        print(request.user.pk)
+        #print(request.user.pk)
         count_clients = ClientName.objects.filter(user=request.user.pk).count()
         count_clients_active = ClientName.objects.filter(unsubscribe=0,user=request.user.pk).count()
         clients_unsubscribe = count_clients - count_clients_active
@@ -25,8 +26,10 @@ class AnaliticView(LoginRequiredMixin,View):
         count_tasks_end = Task.objects.filter(user=request.user.pk,status='end').count()
         count_tasks_active = count_tasks - (count_tasks_end + count_tasks_stop)
         # количество отправленных писем
-        email_send_ок = Attempt.objects.filter(task__user=request.user.pk).count()
+        email_send_ок = (Attempt.objects.filter(task_send__user_id=request.user.pk).aggregate(total=Sum('len_mail'))['total'])
+                         #values('len_mail').sum)
 
+        #print (email_send_ок)
 
         return render(request, 'mailing/index.html',
                       {'count_clients': count_clients,
@@ -36,4 +39,5 @@ class AnaliticView(LoginRequiredMixin,View):
                        'count_tasks': count_tasks,
                        'count_tasks_end': count_tasks_end,
                        'count_tasks_active': count_tasks_active,
+                       'email_send_ок': email_send_ок,
                        })

@@ -1,10 +1,20 @@
 # Mailing
+#### Pyton, Django, Postgres, bootstrap, Redis
+
 приложение для организации рассылок по электронной почте
 
+
+## !!! Приложение работает в тестовом режиме
+**Почта выводится в консоль. Для отправки почты через SMTP  
+измените значение EMAIL_BACKEND 
+в файле config/settings.py страница 26-28** 
+
+
 ## Аналитика
+Выводит данные по рассылкам
 
 ## Клиенты
-Выводит список адресов для рассылок. 
+Выводит список адресов для рассылок для данного клиета. 
 Возможность добавления и редактирования данных клиента, добавлять комментарии.
 Загрузка списка клиентов из JSON-файла.
 Удаление всех данных.
@@ -40,13 +50,13 @@
 ```commandline
  poetry install
 ```
+### Настроить файл .env 
+по образцу (.env.example)
 
-python manage.py  makemigrations
+### Миграции
+
 ```commandline
  python manage.py  migrate
-```
-```commandline
-
 ```
 
 
@@ -68,6 +78,14 @@ python manage.py  makemigrations
 ```commandline
  python manage.py loaddata test_data/EmailForSend_fixture.json
 ```
+
+
+## Ввод клиентской базы
+Адреса для рассылки вводятся в разделе клиенты кнопкой добавить.
+Так же возможна загрузки из json-файла рассположеного в папке data - client.json
+Данный функйионал предусмотрен для добавления в будущем
+возможности загрузки клиентской база посредством файла.
+
 
 
 python  -Xutf8 manage.py dumpdata mailing.ClientName --output test_data/ClientName_fixture.json --indent 4

@@ -23,7 +23,8 @@ class TaskListView(LoginRequiredMixin, ListView):
     def get(self, request, *args, **kwargs):
 
         if request.GET.get('send'):
-            send_email_to_clients(self, request.GET.get('send'))#request.GET.get('send')
+            user_pk =  self.request.user.pk
+            send_email_to_clients(user_pk, request.GET.get('send'))#request.GET.get('send')
 
         return  super(TaskListView, self).get(request, *args, **kwargs)
 
