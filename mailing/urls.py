@@ -34,6 +34,7 @@ urlpatterns = [
     path('task/<int:pk>/delete', views.TaskDeleteView.as_view(), name='task_delete'),
     path('task/<int:task>/clients/', views.EmailForSendView.as_view(), name='task_for_clients'),
     path('task/<int:task>/clients/insert', views.EmailForSendInsertView.as_view(), name='clients_for_task_insert'),
+    path('task/<int:task>/clients/add', views.EmailForSendAddView.as_view(), name='clients_for_task_add'),
     path('task/<int:task>/clients/remove', views.EmailForSendDeleteView.as_view(), name='clients_for_task_remove'),
 
     # Логи

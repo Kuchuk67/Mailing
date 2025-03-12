@@ -4,7 +4,7 @@ from config.settings import BASE_DIR
 import json
 import os
 from mailing.models import ClientName, EmailForSend
-from typing import Optional
+from django.core.cache import cache
 import secrets
 
 
@@ -29,7 +29,7 @@ class ClientTo():
         ClientTo.count_ok = 0  # Успешно Обработанные адреса
         ClientTo.count_duble = 0  # Такие адреса уже в списке
 
-    def __init__(self, task_id:int=0, file_json='client.json'):
+    def __init__(self, task_id:int=0, file_json='1.json'):
 
         self.file_json = file_json # имя файла с адресами
         self.task_id = task_id  # ID рассылки при привязке адреса к рассылке
@@ -81,6 +81,7 @@ class ClientTo():
             if save:
                 client.save()
                 status = 'update'
+
         return client.email, status, client.id
 
 

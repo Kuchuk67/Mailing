@@ -5,6 +5,9 @@ from django.views.generic import ListView, DetailView
 from ..forms import TaskForm
 from django.views import View
 from ..src.client_to import ClientTo
+from django.core.cache import cache
+import secrets
+from django.db import IntegrityError
 
 class EmailForSendView(ListView):
     model = EmailForSend
@@ -16,9 +19,14 @@ class EmailForSendView(ListView):
 
     # Получаем связанные данные: mail-ы куда отправлять рассылку
     def get_queryset(self, **kwargs):
-        queryset = super().get_queryset()
+
+        queryset = cache.get('email_for_send')
         task = self.kwargs['task']
+        if not queryset: # Кешируем данные на 15 минут
+            queryset = super().get_queryset()
+            cache.set('email_for_send', queryset, 60 * 15)
         return queryset.order_by('task_id').filter(task_id=task)
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -32,6 +40,9 @@ class EmailForSendView(ListView):
 class EmailForSendInsertView(View):
     #model = EmailForSend
     def get(self, request, *args, **kwargs):
+        # Сброс кеша
+        cache.delete('email_for_send')
+
         task_id = int(self.kwargs['task'])
         json_mail = ClientTo(task_id=task_id, file_json='client_new.json')
         #user_id = self.request.user.pk
@@ -49,6 +60,9 @@ class EmailForSendInsertView(View):
 
 class EmailForSendDeleteView(View):
     def post(self, request, *args, **kwargs):
+        # Сброс кеша
+        cache.delete('email_for_send')
+
         if request.method == 'POST':
             form = DeleteObjectForm(request.POST)
             if form.is_valid():
@@ -62,3 +76,33 @@ class EmailForSendDeleteView(View):
                       {"active_menu": "task",
                                "task" : task,
                        })
+
+
+class EmailForSendAddView(View):
+    def get(self, request, *args, **kwargs):
+        # Сброс кеша
+        cache.delete('email_for_send')
+        count_error, count_all, count_duble, count_ok = 0, 0, 0, 0
+        task_id = int(self.kwargs['task'])
+        token = secrets.token_urlsafe(20)
+        user = self.request.user.pk
+        client_mails = ClientName.objects.filter(user=user)
+        for client in client_mails:
+            print(client.email, user, task_id)
+            count_all +=1
+            try:
+                EmailForSend.objects.create(client_id=client.pk, task_id=task_id, token=token)
+            except IntegrityError:
+                count_duble += 1
+                count_error +=1
+            else:
+                count_ok +=1
+        return render(request, 'mailing/tasks/clientname_insert_report.html',
+                  {'count_all': count_all,
+                   'count_error': count_error,
+                   "active_menu": "task",
+                   'count_duble': count_duble,
+                   # 'count_update': json_mail.count_update,
+                   'count_ok': count_ok,
+                   'task_id': task_id,
+                   })

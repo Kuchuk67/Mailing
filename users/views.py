@@ -66,7 +66,7 @@ def activate_user(request):
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = CustomUser
     form_class = UserUpdateForm
-    success_url = reverse_lazy('mailing:tasks')
+    success_url = reverse_lazy('mailing:analitic')
     template_name = 'profile_edite.html'
     path_img_temp = None
 

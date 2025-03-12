@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.db.models import Count
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -9,7 +9,8 @@ from django.views.generic import ListView, DetailView
 from ..forms import  ModerationTaskForm
 
 
-class ModerationTaskListView(LoginRequiredMixin, ListView):
+class ModerationTaskListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
+    permission_required = 'mailing.can_moderation_mailing'
 
     model = Task
     context_object_name = 'tasks'
@@ -46,7 +47,8 @@ class ModerationTaskListView(LoginRequiredMixin, ListView):
         #context['user_activ'] =    CustomUser.objects.values('username')
         return context
 
-class ModerationTaskUpdateView(LoginRequiredMixin, UpdateView):
+class ModerationTaskUpdateView(LoginRequiredMixin,PermissionRequiredMixin, UpdateView):
+    permission_required = 'mailing.can_moderation_mailing'
     model = Task
     form_class = ModerationTaskForm
     success_url = reverse_lazy('mailing:moderation_tasks')
@@ -59,7 +61,8 @@ class ModerationTaskUpdateView(LoginRequiredMixin, UpdateView):
         return form_kwargs
 
 
-class ModerationUserListView(LoginRequiredMixin, ListView):
+class ModerationUserListView(LoginRequiredMixin, PermissionRequiredMixin,  ListView):
+    permission_required = 'users.can_moderation_users'
     model = CustomUser
     context_object_name = 'users'
     paginate_by = 10

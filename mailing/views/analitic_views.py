@@ -8,12 +8,21 @@ from django.db.models import Sum
 
 def home(request):
     if request.method == 'GET':
+
         return render(request, "home.html")
 
 
 
 class AnaliticView(LoginRequiredMixin,View):
     def get(self, request, *args, **kwargs):
+        """print(request.user.groups.all())
+        group_user = request.user.groups.all()
+        moderator = False
+        for g in group_user:
+            if g == 'Модератор':
+                moderator = True"""
+
+
         # Собираем аналитику
         # количество писем
         #print(request.user.pk)

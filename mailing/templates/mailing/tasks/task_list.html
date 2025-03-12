@@ -28,12 +28,15 @@
                                 <td>{{ task.end_at | date:"d M Y H:i" }}</td>
                                 <td {% if task.status == 'created' %} class="bg_yel" {% endif %}
                               {% if task.status == 'start' %} class="bg_rose" {% endif %}>{{ task.get_status_display }}</td>
-                                <td  style="text-align: center;"><a class="min-botton btn btn-secondary" href="{{ task.id }}/clients/{% if page %}?page={{ page }}{% endif %}  ">
+                                <td  style="text-align: center;">
                                     {% for counter in clients_counter %}
                                         {% if counter.task_id == task.id %}
-                                            {{ counter.field_count }}                                                                 {{                          vbvbvbvbvbvbv}}
+                                                 {{ counter.field_count }}
                                         {% endif %}
                                     {% endfor %}
+                                    <a class="min-botton btn btn-secondary" href="{{ task.id }}/clients/{% if page %}?page={{ page }}{% endif %}  ">
+
+                                     добавить
                                 </a></td>
                                 <td>{% if task.description %}
                                     {{ task.description | truncatechars:50 }}

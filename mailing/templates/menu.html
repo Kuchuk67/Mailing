@@ -4,11 +4,12 @@
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/mailing/" class="nav-link {% if not active_menu  %} active {% endif %} " aria-current="page">Рассылки</a></li>
+         {% if  request.user|not_has_group:"Модератор" %}
         <li class="nav-item"><a href="/mailing/client/" class="nav-link {% if active_menu == 'client' %} active {% endif %}">Клиенты</a></li>
         <li class="nav-item"><a href="/mailing/message/" class="nav-link {% if active_menu == 'messages' %} active {% endif %}">Тексты</a></li>
         <li class="nav-item"><a href="/mailing/task/" class="nav-link {% if active_menu == 'task' %} active {% endif %}">Планировка рассылок</a></li>
         <li class="nav-item"><a href="/mailing/log/" class="nav-link {% if active_menu == 'attempt' %} active {% endif %}">Логи</a></li>
-
+          {% endif %}
           {% if  request.user|has_group:"Модератор" %}
           <li class="nav-item"><a href="{% url 'mailing:moderation_tasks' %}"  class="nav-link {% if active_menu == 'moderation' %} active {% endif %}">Модерация</a></li>
           <li class="nav-item"><a href="{% url 'mailing:moderation_users' %}" class="nav-link {% if active_menu == 'users' %} active {% endif %}">Пользователи</a></li>
