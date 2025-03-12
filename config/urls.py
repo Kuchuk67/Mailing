@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 
@@ -22,11 +23,11 @@ from django.conf.urls.static import static
 from mailing.views import home
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home,  name="home"),
-    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
-    path('mailing/',include('mailing.urls',namespace='mailing')),
-    path('mailing/users/', include('users.urls', namespace='users')),
+    path("admin/", admin.site.urls),
+    path("", home, name="home"),
+    path("ckeditor5/", include("django_ckeditor_5.urls"), name="ck_editor_5_upload_file"),
+    path("mailing/", include("mailing.urls", namespace="mailing")),
+    path("mailing/users/", include("users.urls", namespace="users")),
 ]
 #
 

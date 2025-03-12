@@ -10,57 +10,66 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('mailing', '0001_initial'),
+        ("mailing", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='clientname',
-            name='user',
+            model_name="clientname",
+            name="user",
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
-            model_name='emailforsend',
-            name='client',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='mailing.clientname'),
+            model_name="emailforsend",
+            name="client",
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="mailing.clientname"),
         ),
         migrations.AddField(
-            model_name='message',
-            name='user',
+            model_name="message",
+            name="user",
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
-            model_name='task',
-            name='client_emails',
-            field=models.ManyToManyField(related_name='tasks', through='mailing.EmailForSend', to='mailing.clientname'),
+            model_name="task",
+            name="client_emails",
+            field=models.ManyToManyField(
+                related_name="tasks", through="mailing.EmailForSend", to="mailing.clientname"
+            ),
         ),
         migrations.AddField(
-            model_name='task',
-            name='message',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='message', to='mailing.message', verbose_name='Текст сообщения'),
+            model_name="task",
+            name="message",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="message",
+                to="mailing.message",
+                verbose_name="Текст сообщения",
+            ),
         ),
         migrations.AddField(
-            model_name='task',
-            name='user',
+            model_name="task",
+            name="user",
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
-            model_name='emailforsend',
-            name='task',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='mailing.task'),
+            model_name="emailforsend",
+            name="task",
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="mailing.task"),
         ),
         migrations.AddField(
-            model_name='attempt',
-            name='task_send',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='mail_for_send', to='mailing.task'),
+            model_name="attempt",
+            name="task_send",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, related_name="mail_for_send", to="mailing.task"
+            ),
         ),
         migrations.AlterUniqueTogether(
-            name='clientname',
-            unique_together={('email', 'user')},
+            name="clientname",
+            unique_together={("email", "user")},
         ),
         migrations.AlterUniqueTogether(
-            name='emailforsend',
-            unique_together={('task', 'client')},
+            name="emailforsend",
+            unique_together={("task", "client")},
         ),
     ]

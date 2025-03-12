@@ -1,13 +1,13 @@
 from django.core.management.base import BaseCommand
 from mailing.services.send_email import send_email_to_clients
 from users.models import CustomUser
-from mailing.models import Task, Attempt
+from mailing.models import Task
 
 
 class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
-        user_email = input('Введите email пользователя:')
+        user_email = input("Введите email пользователя:")
 
         # получение данных о пользователе
         try:
@@ -26,8 +26,8 @@ class Command(BaseCommand):
         # Выбор номера рассылки для отправки
         print("Найдены рассылки:\n")
         for task in tasks:
-            print( f"{task.pk}. {task.name}  /  {task}" )
-        task_for_send = input('\nВведите номер рассылки для отправки или 0 для выхода:')
+            print(f"{task.pk}. {task.name}  /  {task}")
+        task_for_send = input("\nВведите номер рассылки для отправки или 0 для выхода:")
         if task_for_send == "0":
             return None
 
@@ -40,8 +40,3 @@ class Command(BaseCommand):
 
         if send_status:
             print("\n\nРассылка успешно завершена\n")
-
-
-
-
-
