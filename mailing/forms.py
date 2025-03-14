@@ -45,6 +45,11 @@ class TaskForm(forms.ModelForm):
                 "start_at",
                 "При запуске рассылки установите время начала больше текущего",
             )
+        if (status == 'start'):
+            self.add_error(
+                "status",
+                "Для запуска установите время начала или нажмите кнопку 'Отправить сейчас'",
+            )
 
 
 class ModerationTaskForm(forms.ModelForm):
