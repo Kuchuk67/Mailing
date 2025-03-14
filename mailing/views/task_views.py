@@ -3,7 +3,7 @@ from django.db.models import Count
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-
+from mailing.schedule import start_task, cancel_task
 from ..forms import TaskForm
 from ..models import EmailForSend, Task
 from ..services.send_email import send_email_to_clients
@@ -66,6 +66,9 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        if form.instance.status == 'created':
+            # Устанавливаем время отправки
+            start_task(form.instance.start_at, str(form.instance.id) )
         return super().form_valid(form)
 
 
@@ -80,6 +83,15 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
         form_kwargs = super(TaskUpdateView, self).get_form_kwargs()
         form_kwargs["initial"] = {"user_pk": self.request.user.pk}
         return form_kwargs
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        if form.instance.status == 'created':
+            # Устанавливаем время отправки
+            start_task(form.instance.start_at,  str(form.instance.id))
+        else:
+            cancel_task(str(form.instance.id))
+        return super().form_valid(form)
 
 
 class TaskDeleteView(LoginRequiredMixin, DeleteView):

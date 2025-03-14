@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+from apscheduler.schedulers.background import BackgroundScheduler
 from dotenv import load_dotenv
 
 # Загрузка переменных из .env-файла
@@ -55,6 +56,7 @@ BASE_HOSTS = "http://127.0.0.1:8000"
 # Application definition
 
 INSTALLED_APPS = [
+    'django_apscheduler',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -315,3 +317,7 @@ CACHES = {
         "LOCATION": "redis://127.0.0.1:6379/1",
     }
 }
+
+
+scheduler = BackgroundScheduler()
+scheduler.start()
