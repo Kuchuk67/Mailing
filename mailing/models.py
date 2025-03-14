@@ -1,5 +1,6 @@
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
+
 from users.models import CustomUser
 
 
@@ -35,7 +36,9 @@ class Message(models.Model):
     title_mail = models.CharField(max_length=150, verbose_name="Тема письма")
     text_mail = CKEditor5Field(verbose_name="Текст mail", config_name="extends")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="дата создания")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="дата последнего изменения")
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name="дата последнего изменения"
+    )
     user = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,
@@ -64,11 +67,18 @@ class Task(models.Model):
         ("created", "Создана"),
         ("start", "Запущена"),
     ]
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="stop", verbose_name="Статус")
-    message = models.ForeignKey(
-        Message, on_delete=models.CASCADE, related_name="message", verbose_name="Текст сообщения"
+    status = models.CharField(
+        max_length=10, choices=STATUS_CHOICES, default="stop", verbose_name="Статус"
     )
-    client_emails = models.ManyToManyField(ClientName, through="EmailForSend", related_name="tasks")
+    message = models.ForeignKey(
+        Message,
+        on_delete=models.CASCADE,
+        related_name="message",
+        verbose_name="Текст сообщения",
+    )
+    client_emails = models.ManyToManyField(
+        ClientName, through="EmailForSend", related_name="tasks"
+    )
     description = models.TextField(blank=True, null=True, verbose_name="Коментарии")
     user = models.ForeignKey(
         CustomUser,
@@ -100,8 +110,12 @@ class Attempt(models.Model):
     attempt_at = models.DateTimeField(auto_now_add=True, verbose_name="время рассылки")
     success = models.BooleanField(verbose_name="статус операции")
     response = models.CharField(max_length=250, verbose_name="ответ сервера")
-    task_send = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="mail_for_send")
-    len_mail = models.IntegerField(blank=True, null=True, verbose_name="Количество отправленных писем")
+    task_send = models.ForeignKey(
+        Task, on_delete=models.CASCADE, related_name="mail_for_send"
+    )
+    len_mail = models.IntegerField(
+        blank=True, null=True, verbose_name="Количество отправленных писем"
+    )
 
     def __str__(self):
         return f"{self.task_send} - {self.success}"

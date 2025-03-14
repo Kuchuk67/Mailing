@@ -1,11 +1,13 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Count
 from django.urls import reverse_lazy
-from django.views.generic.edit import UpdateView, CreateView, DeleteView
-from ..models import Task, EmailForSend
-from django.views.generic import ListView, DetailView
+from django.views.generic import DetailView, ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+
 from ..forms import TaskForm
+from ..models import EmailForSend, Task
 from ..services.send_email import send_email_to_clients
+
 # Views for model Task
 
 
@@ -20,7 +22,9 @@ class TaskListView(LoginRequiredMixin, ListView):
 
         if request.GET.get("send"):
             user_pk = self.request.user.pk
-            send_email_to_clients(user_pk, request.GET.get("send"))  # request.GET.get('send')
+            send_email_to_clients(
+                user_pk, request.GET.get("send")
+            )  # request.GET.get('send')
 
         return super(TaskListView, self).get(request, *args, **kwargs)
 
@@ -32,7 +36,9 @@ class TaskListView(LoginRequiredMixin, ListView):
         page = self.request.GET.get("page")
         context["page"] = page
         context["clients_counter"] = (
-            EmailForSend.objects.values("task_id").order_by("task_id").annotate(field_count=Count("task_id"))
+            EmailForSend.objects.values("task_id")
+            .order_by("task_id")
+            .annotate(field_count=Count("task_id"))
         )
         # print(context['clients_counter'])
         return context

@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from mailing.models import Attempt
 from django.views.generic import ListView
+
+from mailing.models import Attempt
 
 
 class AttemptListView(LoginRequiredMixin, ListView):

@@ -1,7 +1,8 @@
 from django.core.management.base import BaseCommand
+
+from mailing.models import Task
 from mailing.services.send_email import send_email_to_clients
 from users.models import CustomUser
-from mailing.models import Task
 
 
 class Command(BaseCommand):
@@ -12,14 +13,16 @@ class Command(BaseCommand):
         # получение данных о пользователе
         try:
             user = CustomUser.objects.get(email=user_email)
-        except:
-            print("При получении данных о пользователе возника ошибка. Возможно такой email не существует.")
+        except Exception:
+            print(
+                "При получении данных о пользователе возника ошибка. Возможно такой email не существует."
+            )
             return None
 
         # получение данных о pассылоках пользователя
         try:
             tasks = Task.objects.filter(user=user.pk)
-        except:
+        except Exception:
             print("Рассылок связанных с этим пользователем не найдено.")
             return None
 
@@ -34,7 +37,7 @@ class Command(BaseCommand):
         # Отправка
         try:
             send_status = send_email_to_clients(user.pk, task_for_send)
-        except:
+        except Exception:
             print("Рассылок связанных с этим пользователем не найдено.")
             return None
 

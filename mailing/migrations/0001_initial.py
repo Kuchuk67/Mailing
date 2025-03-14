@@ -14,11 +14,34 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Attempt",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("attempt_at", models.DateTimeField(auto_now_add=True, verbose_name="время рассылки")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "attempt_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="время рассылки"
+                    ),
+                ),
                 ("success", models.BooleanField(verbose_name="статус операции")),
-                ("response", models.CharField(max_length=250, verbose_name="ответ сервера")),
-                ("len_mail", models.IntegerField(blank=True, null=True, verbose_name="Количество отправленных писем")),
+                (
+                    "response",
+                    models.CharField(max_length=250, verbose_name="ответ сервера"),
+                ),
+                (
+                    "len_mail",
+                    models.IntegerField(
+                        blank=True,
+                        null=True,
+                        verbose_name="Количество отправленных писем",
+                    ),
+                ),
             ],
             options={
                 "verbose_name": "Попытка",
@@ -29,11 +52,32 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="ClientName",
             fields=[
-                ("id", models.AutoField(primary_key=True, serialize=False, verbose_name="id")),
-                ("email", models.CharField(max_length=150, verbose_name="email клиента")),
-                ("name", models.CharField(max_length=150, verbose_name="Фамилия Имя Отчество")),
-                ("description", models.TextField(blank=True, null=True, verbose_name="Комментарий")),
-                ("unsubscribe", models.IntegerField(default=0, editable=False, verbose_name="Отписка")),
+                (
+                    "id",
+                    models.AutoField(
+                        primary_key=True, serialize=False, verbose_name="id"
+                    ),
+                ),
+                (
+                    "email",
+                    models.CharField(max_length=150, verbose_name="email клиента"),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=150, verbose_name="Фамилия Имя Отчество"
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Комментарий"),
+                ),
+                (
+                    "unsubscribe",
+                    models.IntegerField(
+                        default=0, editable=False, verbose_name="Отписка"
+                    ),
+                ),
             ],
             options={
                 "verbose_name": "Клиент",
@@ -44,18 +88,50 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="EmailForSend",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
                 ("token", models.CharField(max_length=50)),
             ],
         ),
         migrations.CreateModel(
             name="Message",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("title_mail", models.CharField(max_length=150, verbose_name="Тема письма")),
-                ("text_mail", django_ckeditor_5.fields.CKEditor5Field(verbose_name="Текст mail")),
-                ("created_at", models.DateTimeField(auto_now_add=True, verbose_name="дата создания")),
-                ("updated_at", models.DateTimeField(auto_now=True, verbose_name="дата последнего изменения")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title_mail",
+                    models.CharField(max_length=150, verbose_name="Тема письма"),
+                ),
+                (
+                    "text_mail",
+                    django_ckeditor_5.fields.CKEditor5Field(verbose_name="Текст mail"),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="дата создания"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        auto_now=True, verbose_name="дата последнего изменения"
+                    ),
+                ),
             ],
             options={
                 "verbose_name": "Сообщение",
@@ -66,10 +142,26 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Task",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
                 ("name", models.CharField(max_length=150, verbose_name="имя задачи")),
-                ("start_at", models.DateTimeField(verbose_name="время начала рассылки")),
-                ("end_at", models.DateTimeField(blank=True, null=True, verbose_name="время завершения рассылки")),
+                (
+                    "start_at",
+                    models.DateTimeField(verbose_name="время начала рассылки"),
+                ),
+                (
+                    "end_at",
+                    models.DateTimeField(
+                        blank=True, null=True, verbose_name="время завершения рассылки"
+                    ),
+                ),
                 (
                     "status",
                     models.CharField(
@@ -84,7 +176,10 @@ class Migration(migrations.Migration):
                         verbose_name="Статус",
                     ),
                 ),
-                ("description", models.TextField(blank=True, null=True, verbose_name="Коментарии")),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Коментарии"),
+                ),
             ],
             options={
                 "verbose_name": "Задача",

@@ -1,6 +1,8 @@
-from django import forms
-from .models import Task, Message, ClientName
 from datetime import datetime
+
+from django import forms
+
+from .models import ClientName, Message, Task
 
 
 class TaskForm(forms.ModelForm):
@@ -13,12 +15,18 @@ class TaskForm(forms.ModelForm):
 
     start_at = forms.DateTimeField(
         widget=forms.DateTimeInput(
-            attrs={"class": "form-control", "type": "datetime-local", "title": "дата создания"},
+            attrs={
+                "class": "form-control",
+                "type": "datetime-local",
+                "title": "дата создания",
+            },
             format="%Y-%m-%dT%H:%M",
         ),
         label="Время начала рассылки",
     )
-    description = forms.CharField(widget=forms.Textarea(attrs={"class": "form-control"}), label="Комментарий")
+    description = forms.CharField(
+        widget=forms.Textarea(attrs={"class": "form-control"}), label="Комментарий"
+    )
 
     class Meta:
         model = Task
@@ -30,10 +38,13 @@ class TaskForm(forms.ModelForm):
         super().clean()
         start_at = self.cleaned_data.get("start_at")
         status = self.cleaned_data.get("status")
-        if status == "created" and start_at.strftime("%Y-%m-%d %H:%M:%S") < datetime.now().strftime(
+        if status == "created" and start_at.strftime(
             "%Y-%m-%d %H:%M:%S"
-        ):
-            self.add_error("start_at", "При запуске рассылки установите время начала больше текущего")
+        ) < datetime.now().strftime("%Y-%m-%d %H:%M:%S"):
+            self.add_error(
+                "start_at",
+                "При запуске рассылки установите время начала больше текущего",
+            )
 
 
 class ModerationTaskForm(forms.ModelForm):

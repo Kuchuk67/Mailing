@@ -17,9 +17,22 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="CustomUser",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
                 ("password", models.CharField(max_length=128, verbose_name="password")),
-                ("last_login", models.DateTimeField(blank=True, null=True, verbose_name="last login")),
+                (
+                    "last_login",
+                    models.DateTimeField(
+                        blank=True, null=True, verbose_name="last login"
+                    ),
+                ),
                 (
                     "is_superuser",
                     models.BooleanField(
@@ -44,12 +57,29 @@ class Migration(migrations.Migration):
                         verbose_name="active",
                     ),
                 ),
-                ("date_joined", models.DateTimeField(default=django.utils.timezone.now, verbose_name="date joined")),
-                ("username", models.CharField(blank=True, max_length=100, verbose_name="Имя")),
+                (
+                    "date_joined",
+                    models.DateTimeField(
+                        default=django.utils.timezone.now, verbose_name="date joined"
+                    ),
+                ),
+                (
+                    "username",
+                    models.CharField(blank=True, max_length=100, verbose_name="Имя"),
+                ),
                 ("email", models.EmailField(max_length=254, unique=True)),
-                ("token_for_activate", models.CharField(blank=True, max_length=50, null=True)),
-                ("phone", models.CharField(blank=True, max_length=15, verbose_name="Телефон")),
-                ("country", models.CharField(blank=True, max_length=15, verbose_name="Страна")),
+                (
+                    "token_for_activate",
+                    models.CharField(blank=True, max_length=50, null=True),
+                ),
+                (
+                    "phone",
+                    models.CharField(blank=True, max_length=15, verbose_name="Телефон"),
+                ),
+                (
+                    "country",
+                    models.CharField(blank=True, max_length=15, verbose_name="Страна"),
+                ),
                 (
                     "groups",
                     models.ManyToManyField(

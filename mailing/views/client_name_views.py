@@ -1,13 +1,14 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
-from django.views.generic.edit import UpdateView, CreateView, DeleteView
-from ..models import ClientName
-from django.views.generic import ListView, DetailView
-from django.views import View
-from ..forms import ClientNameForm, DeleteObjectForm
-from django.shortcuts import redirect, render
-from ..src.client_to import ClientTo
 from django.core.cache import cache
+from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from django.views import View
+from django.views.generic import DetailView, ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+
+from ..forms import ClientNameForm, DeleteObjectForm
+from ..models import ClientName
+from ..src.client_to import ClientTo
 
 
 # @method_decorator(cache_page(60 * 15), name='dispatch')
@@ -22,7 +23,9 @@ class ClientNameListView(LoginRequiredMixin, ListView):
         queryset = cache.get("mail_list_queryset")
         if not queryset:
             queryset = super().get_queryset()
-            cache.set("mail_list_queryset", queryset, 60 * 15)  # Кешируем данные на 15 минут
+            cache.set(
+                "mail_list_queryset", queryset, 60 * 15
+            )  # Кешируем данные на 15 минут
         return ClientName.objects.filter(user=self.request.user)
 
 
@@ -97,7 +100,9 @@ class DeleteAllClientView(LoginRequiredMixin, View):
                 return redirect("mailing:clients")
 
     def get(self, request, *args, **kwargs):
-        return render(request, "mailing/client/clientname_confirm.html", {"active_menu": "client"})
+        return render(
+            request, "mailing/client/clientname_confirm.html", {"active_menu": "client"}
+        )
 
 
 class ClientNameInsert(LoginRequiredMixin, View):

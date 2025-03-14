@@ -13,7 +13,9 @@
                 {{ form.as_p }}
                 <button class="btn btn-primary" type="submit">Войти</button
               </form>
+        <a class="btn btn-secondary" href="{% url 'users:signup' %}">Зарегистрироваться</a>
         <a href="{% url 'users:reset_password' %}">Забыли пароль....</a>
+
 
     </div>
 </div>

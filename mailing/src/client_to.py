@@ -1,9 +1,11 @@
-from django.db import IntegrityError
-from config.settings import BASE_DIR
 import json
 import os
-from mailing.models import ClientName, EmailForSend
 import secrets
+
+from django.db import IntegrityError
+
+from config.settings import BASE_DIR
+from mailing.models import ClientName, EmailForSend
 
 
 class ClientTo:
@@ -44,7 +46,9 @@ class ClientTo:
             self.json = data
 
     @staticmethod
-    def find_client(client_email, client_name, user_id, client_description="") -> tuple[str, str, int]:
+    def find_client(
+        client_email, client_name, user_id, client_description=""
+    ) -> tuple[str, str, int]:
         """Находит пользователя в таблице Client по e-mail'у, если нет - добавляет.
         Возвращает email, статус:
         new - новый клиент;
@@ -53,16 +57,28 @@ class ClientTo:
         update - обновление данных клиента."""
         client_email = client_email.strip()
 
-        client = ClientName.objects.filter(email=client_email).filter(user=user_id).first()
+        client = (
+            ClientName.objects.filter(email=client_email).filter(user=user_id).first()
+        )
         if client is None:
             try:
                 client = ClientName.objects.create(
-                    email=client_email, user=user_id, name=client_name, description=client_description
+                    email=client_email,
+                    user=user_id,
+                    name=client_name,
+                    description=client_description,
                 )
                 client.save()
                 status = "new"
             except Exception as e:
-                print(e, "Ошибка: не добавлен клиент ", client_email, user_id, client_name, client_description)
+                print(
+                    e,
+                    "Ошибка: не добавлен клиент ",
+                    client_email,
+                    user_id,
+                    client_name,
+                    client_description,
+                )
                 client.email = ""
                 status = "error"
         else:
@@ -93,12 +109,16 @@ class ClientTo:
             self.count_all += 1
 
             # Найти его email в таблице, если нет - добавить
-            email = ClientTo.find_client(client["email"], client["name"], user_id, client.get("description"))
+            email = ClientTo.find_client(
+                client["email"], client["name"], user_id, client.get("description")
+            )
             if email:
                 # Добавить в таблицу EmailForSend
                 token = secrets.token_urlsafe(20)
                 try:
-                    EmailForSend.objects.create(client_id=email[2], task_id=self.task_id, token=token)
+                    EmailForSend.objects.create(
+                        client_id=email[2], task_id=self.task_id, token=token
+                    )
                 except IntegrityError:
                     self.count_duble += 1
 
@@ -119,7 +139,10 @@ class ClientTo:
             self.count_all += 1
             # Найти его ID в таблице, если нет - добавить
             email, status, id_ = ClientTo.find_client(
-                client.get("email"), client.get("name"), user_id, client.get("description")
+                client.get("email"),
+                client.get("name"),
+                user_id,
+                client.get("description"),
             )
             # сохраняем результат
             if status == "error":

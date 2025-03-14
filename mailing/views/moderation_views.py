@@ -2,10 +2,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.db.models import Count
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic.edit import UpdateView
-from ..models import Task, EmailForSend, CustomUser
 from django.views.generic import ListView
+from django.views.generic.edit import UpdateView
+
 from ..forms import ModerationTaskForm
+from ..models import CustomUser, EmailForSend, Task
 
 
 class ModerationTaskListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
@@ -41,7 +42,9 @@ class ModerationTaskListView(LoginRequiredMixin, PermissionRequiredMixin, ListVi
         page = self.request.GET.get("page")
         context["page"] = page
         context["clients_counter"] = (
-            EmailForSend.objects.values("task_id").order_by("task_id").annotate(field_count=Count("task_id"))
+            EmailForSend.objects.values("task_id")
+            .order_by("task_id")
+            .annotate(field_count=Count("task_id"))
         )
         print(context["tasks"])
         # context['user_activ'] =    CustomUser.objects.values('username')

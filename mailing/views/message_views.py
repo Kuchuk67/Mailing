@@ -1,10 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
-from django.views.generic.edit import UpdateView, CreateView, DeleteView
-from ..models import Message, Task
-from django.views.generic import ListView
-from ..forms import MessageForm
 from django.db.models import Count
+from django.urls import reverse_lazy
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+
+from ..forms import MessageForm
+from ..models import Message, Task
 
 # Views for model Message
 
@@ -23,7 +24,11 @@ class MessageListView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
 
         # Подсчет сколько созданных рассылок используют этот текст
-        counter_message = Task.objects.values("message").order_by("message").annotate(field_count=Count("message"))
+        counter_message = (
+            Task.objects.values("message")
+            .order_by("message")
+            .annotate(field_count=Count("message"))
+        )
         context["counter_message"] = counter_message
         return context
 

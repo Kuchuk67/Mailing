@@ -1,7 +1,9 @@
-from .models import CustomUser
+import re
+
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-import re
+
+from .models import CustomUser
 
 
 class SignUpForm(UserCreationForm):
@@ -71,5 +73,7 @@ class UserUpdateForm(forms.ModelForm):
         phone = self.cleaned_data["phone"]
         phone = "".join(re.findall("[0-9]", phone))
         if len(phone) < 8:
-            raise forms.ValidationError("Номер телефона должен содержать минимум 8 цифр")
+            raise forms.ValidationError(
+                "Номер телефона должен содержать минимум 8 цифр"
+            )
         return phone

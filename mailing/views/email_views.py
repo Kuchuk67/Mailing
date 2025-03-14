@@ -1,12 +1,14 @@
-from django.shortcuts import render, redirect
-from ..forms import DeleteObjectForm
-from ..models import ClientName, Task, EmailForSend
-from django.views.generic import ListView
-from django.views import View
-from ..src.client_to import ClientTo
-from django.core.cache import cache
 import secrets
+
+from django.core.cache import cache
 from django.db import IntegrityError
+from django.shortcuts import redirect, render
+from django.views import View
+from django.views.generic import ListView
+
+from ..forms import DeleteObjectForm
+from ..models import ClientName, EmailForSend, Task
+from ..src.client_to import ClientTo
 
 
 class EmailForSendView(ListView):
@@ -98,7 +100,9 @@ class EmailForSendAddView(View):
             print(client.email, user, task_id)
             count_all += 1
             try:
-                EmailForSend.objects.create(client_id=client.pk, task_id=task_id, token=token)
+                EmailForSend.objects.create(
+                    client_id=client.pk, task_id=task_id, token=token
+                )
             except IntegrityError:
                 count_duble += 1
                 count_error += 1

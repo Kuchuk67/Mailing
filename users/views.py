@@ -1,13 +1,16 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import UpdateView
-from .models import CustomUser
-from django.views.generic.edit import CreateView
-from django.core.mail import send_mail
-from .forms import SignUpForm, UserUpdateForm
 import secrets
-from config import settings
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.mail import send_mail
 from django.shortcuts import redirect
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse, reverse_lazy
+from django.views.generic import UpdateView
+from django.views.generic.edit import CreateView
+
+from config import settings
+
+from .forms import SignUpForm, UserUpdateForm
+from .models import CustomUser
 
 
 # Create your views here.

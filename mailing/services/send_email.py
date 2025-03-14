@@ -1,7 +1,10 @@
-from django.core.mail import send_mail
 from datetime import datetime
+
+from django.core.mail import send_mail
+
 from config import settings
-from ..models import ClientName, Attempt, Task
+
+from ..models import Attempt, ClientName, Task
 
 
 def send_email_to_clients(user_pk, task_id) -> bool:
@@ -10,7 +13,9 @@ def send_email_to_clients(user_pk, task_id) -> bool:
     print("Отправка писем по задаче № ", task_id)
     print("пользователь ", user_pk)
 
-    task_for_send = ClientName.objects.filter(emailforsend__task__user=user_pk, emailforsend__task=task_id)
+    task_for_send = ClientName.objects.filter(
+        emailforsend__task__user=user_pk, emailforsend__task=task_id
+    )
     email_for_send = [task.email for task in task_for_send]
 
     task = Task.objects.get(user=user_pk, pk=task_id)
