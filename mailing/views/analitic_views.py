@@ -8,11 +8,10 @@ from mailing.models import Attempt, ClientName, Task
 
 def home(request):
     if request.method == "GET":
-
         return render(request, "home.html")
 
 
-class AnaliticView(LoginRequiredMixin, View):
+class AnaliticView(View):
     def get(self, request, *args, **kwargs):
         """print(request.user.groups.all())
         group_user = request.user.groups.all()

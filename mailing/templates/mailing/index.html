@@ -12,7 +12,9 @@
         <div class="title">
             <h1>Рассылка почты</h1>
         </div>
+        {% if user.is_authenticated %}
         {% if  request.user|not_has_group:"Модератор" %}
+
         <div class="row d-flex justify-content-center">
             <div class="col-md-4 p-3 ">
                 <div class="p-3 border " >
@@ -53,7 +55,9 @@
     {% else %}
    Вы зашли под учетной записью модератора рассылки
    {% endif %}
-
+{% else %}
+   Необходимо авторизироваться
+    {% endif %}
     </div>
 </div>
 

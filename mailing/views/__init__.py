@@ -1,7 +1,7 @@
-import analitic_views
-import attempt_view
-import client_name_views
-import email_views
-import message_views
-import moderation_views
-import task_views
+from .analitic_views import *
+from .attempt_view import *
+from .client_name_views import *
+from .email_views import *
+from .message_views import *
+from .moderation_views import *
+from .task_views import *
