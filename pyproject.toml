@@ -7,8 +7,23 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-django = "^5.1.5"
-python-dotenv = "1.0.0"
+asgiref = "3.8.1"
+django = "5.1.5"
+django-ckeditor-5 = "0.2.15"
+pillow = "11.1.0"
+psycopg2 = "2.9.10"
+python-dotenv = "1.0.1"
+sqlparse = "0.5.3"
+tzdata = "2025.1"
+apscheduler = "^3.11.0"
+redis = "^5.2.1"
+django-apscheduler = "^0.7.0"
+
+
+[tool.poetry.group.link.dependencies]
+flake8 = "^7.1.2"
+black = "^25.1.0"
+isort = "^6.0.1"
 
 [build-system]
 requires = ["poetry-core"]

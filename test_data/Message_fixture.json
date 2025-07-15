@@ -1,0 +1,46 @@
+[
+{
+    "model": "mailing.message",
+    "pk": 1,
+    "fields": {
+        "title_mail": "Первая рассылка",
+        "text_mail": "<p>Привет!!!</p><p>Это первая рассылка...</p><p>Вот вам котики..</p><figure class=\"image image-style-align-left image_resized\" style=\"width:19.97%;\"><img style=\"aspect-ratio:728/910;\" src=\"http://127.0.0.1:8000/media/post/2025/02/02/115bf7b3ac8a408540b35bd249dc47a8.0000000.jpg\" width=\"728\" height=\"910\"></figure>",
+        "created_at": "2025-02-04T20:24:47.385Z",
+        "updated_at": "2025-03-12T09:36:47.704Z",
+        "user": 3
+    }
+},
+{
+    "model": "mailing.message",
+    "pk": 2,
+    "fields": {
+        "title_mail": "Маркетинговая рассылка",
+        "text_mail": "<p>Покупайте наши огурцы!!!<br>Они самые колючие и зеленые-зеленые!</p>",
+        "created_at": "2025-02-17T05:42:27.014Z",
+        "updated_at": "2025-02-17T07:20:04.054Z",
+        "user": 3
+    }
+},
+{
+    "model": "mailing.message",
+    "pk": 3,
+    "fields": {
+        "title_mail": "Праздник огурца",
+        "text_mail": "<p>Международный праздник огурца (День Огурца)&nbsp;— ежегодно проводимый в городе Суздаль праздник-фестиваль.</p>",
+        "created_at": "2025-02-17T07:15:25.405Z",
+        "updated_at": "2025-02-17T07:21:21.889Z",
+        "user": 3
+    }
+},
+{
+    "model": "mailing.message",
+    "pk": 4,
+    "fields": {
+        "title_mail": "Что еще продать?",
+        "text_mail": "<p>...</p>",
+        "created_at": "2025-02-17T07:36:52.881Z",
+        "updated_at": "2025-02-17T07:36:52.881Z",
+        "user": 3
+    }
+}
+]

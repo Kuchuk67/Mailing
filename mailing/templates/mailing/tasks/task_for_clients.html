@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    {% include 'menu.html' %}
+
+<div class="fon">
+    <div class=" container-lg d-flex ">
+
+        <div class="col-md-6 p-3 border">
+
+             <h1>Адреса для рассылок</h1>
+                    <a class="btn btn-primary" href="{% url 'mailing:client_create' %} ">Добавить</a>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Клиент</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% include 'pagination.html' %}
+                            {% for client in clients %}
+                            <tr>
+                                <td><a href="{{ client.pk }}">{{ client.client }}</a></td>
+
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <a class="btn btn-primary mt-3" href=" {% url 'mailing:clients_for_task_insert' task_id %}   ">Добавить из файла</a>
+                    <a class="btn btn-primary mt-3" href=" {% url 'mailing:clients_for_task_add' task_id %}   ">Добавить всех из списка</a>
+                    <a class="btn btn-danger mt-3" href="{% url 'mailing:clients_for_task_remove' task_id %}  ">Удалить ВСЕХ</a>
+                    <a class="btn btn-secondary mt-3" href="{% url 'mailing:tasks' %}  ">Вернутся</a>
+
+        </div>
+        <div class="col-md-6 p-3 d-flex justify-content-center">
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,785 @@
+[
+{
+    "model": "mailing.emailforsend",
+    "pk": 1590,
+    "fields": {
+        "task": 1,
+        "client": 1307,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1591,
+    "fields": {
+        "task": 1,
+        "client": 1308,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1592,
+    "fields": {
+        "task": 1,
+        "client": 1309,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1593,
+    "fields": {
+        "task": 1,
+        "client": 1310,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1594,
+    "fields": {
+        "task": 1,
+        "client": 1311,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1595,
+    "fields": {
+        "task": 1,
+        "client": 1312,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1596,
+    "fields": {
+        "task": 1,
+        "client": 1313,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1597,
+    "fields": {
+        "task": 1,
+        "client": 1314,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1598,
+    "fields": {
+        "task": 1,
+        "client": 1315,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1599,
+    "fields": {
+        "task": 1,
+        "client": 1316,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1600,
+    "fields": {
+        "task": 1,
+        "client": 1317,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1601,
+    "fields": {
+        "task": 1,
+        "client": 1318,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1602,
+    "fields": {
+        "task": 1,
+        "client": 1319,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1603,
+    "fields": {
+        "task": 1,
+        "client": 1320,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1604,
+    "fields": {
+        "task": 1,
+        "client": 1321,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1605,
+    "fields": {
+        "task": 1,
+        "client": 1322,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1606,
+    "fields": {
+        "task": 1,
+        "client": 1323,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1607,
+    "fields": {
+        "task": 1,
+        "client": 1324,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1608,
+    "fields": {
+        "task": 1,
+        "client": 1325,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1609,
+    "fields": {
+        "task": 1,
+        "client": 1326,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1610,
+    "fields": {
+        "task": 1,
+        "client": 1327,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1611,
+    "fields": {
+        "task": 1,
+        "client": 1328,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1612,
+    "fields": {
+        "task": 1,
+        "client": 1329,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1613,
+    "fields": {
+        "task": 1,
+        "client": 1330,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1614,
+    "fields": {
+        "task": 1,
+        "client": 1331,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1615,
+    "fields": {
+        "task": 1,
+        "client": 1332,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1616,
+    "fields": {
+        "task": 1,
+        "client": 1333,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1617,
+    "fields": {
+        "task": 1,
+        "client": 1334,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1618,
+    "fields": {
+        "task": 1,
+        "client": 1335,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1619,
+    "fields": {
+        "task": 1,
+        "client": 1336,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1620,
+    "fields": {
+        "task": 1,
+        "client": 1337,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1621,
+    "fields": {
+        "task": 1,
+        "client": 1338,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1622,
+    "fields": {
+        "task": 1,
+        "client": 1339,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1623,
+    "fields": {
+        "task": 1,
+        "client": 1340,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1624,
+    "fields": {
+        "task": 1,
+        "client": 1341,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1625,
+    "fields": {
+        "task": 1,
+        "client": 1342,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1626,
+    "fields": {
+        "task": 1,
+        "client": 1343,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1627,
+    "fields": {
+        "task": 1,
+        "client": 1344,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1628,
+    "fields": {
+        "task": 1,
+        "client": 1345,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1629,
+    "fields": {
+        "task": 1,
+        "client": 1346,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1630,
+    "fields": {
+        "task": 1,
+        "client": 1347,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1631,
+    "fields": {
+        "task": 1,
+        "client": 1348,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1632,
+    "fields": {
+        "task": 1,
+        "client": 1349,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1633,
+    "fields": {
+        "task": 1,
+        "client": 1351,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1634,
+    "fields": {
+        "task": 1,
+        "client": 1350,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1635,
+    "fields": {
+        "task": 1,
+        "client": 1352,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1636,
+    "fields": {
+        "task": 1,
+        "client": 1353,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1637,
+    "fields": {
+        "task": 1,
+        "client": 1354,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1638,
+    "fields": {
+        "task": 1,
+        "client": 1355,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1639,
+    "fields": {
+        "task": 1,
+        "client": 1356,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1640,
+    "fields": {
+        "task": 1,
+        "client": 1357,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1641,
+    "fields": {
+        "task": 1,
+        "client": 1358,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1642,
+    "fields": {
+        "task": 1,
+        "client": 1359,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1643,
+    "fields": {
+        "task": 1,
+        "client": 1360,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1644,
+    "fields": {
+        "task": 1,
+        "client": 1361,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1645,
+    "fields": {
+        "task": 1,
+        "client": 1362,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1646,
+    "fields": {
+        "task": 1,
+        "client": 1363,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1647,
+    "fields": {
+        "task": 1,
+        "client": 1364,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1648,
+    "fields": {
+        "task": 1,
+        "client": 1365,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1649,
+    "fields": {
+        "task": 1,
+        "client": 1366,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1650,
+    "fields": {
+        "task": 1,
+        "client": 1367,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1651,
+    "fields": {
+        "task": 1,
+        "client": 1368,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1652,
+    "fields": {
+        "task": 1,
+        "client": 1369,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1653,
+    "fields": {
+        "task": 1,
+        "client": 1370,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1654,
+    "fields": {
+        "task": 1,
+        "client": 1371,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1655,
+    "fields": {
+        "task": 1,
+        "client": 1372,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1656,
+    "fields": {
+        "task": 1,
+        "client": 1373,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1657,
+    "fields": {
+        "task": 1,
+        "client": 1374,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1658,
+    "fields": {
+        "task": 1,
+        "client": 1375,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1659,
+    "fields": {
+        "task": 1,
+        "client": 1376,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1660,
+    "fields": {
+        "task": 1,
+        "client": 1377,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1661,
+    "fields": {
+        "task": 1,
+        "client": 1378,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1662,
+    "fields": {
+        "task": 1,
+        "client": 1379,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1663,
+    "fields": {
+        "task": 1,
+        "client": 1380,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1664,
+    "fields": {
+        "task": 1,
+        "client": 1381,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1665,
+    "fields": {
+        "task": 1,
+        "client": 1382,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1666,
+    "fields": {
+        "task": 1,
+        "client": 1383,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1667,
+    "fields": {
+        "task": 1,
+        "client": 1384,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1668,
+    "fields": {
+        "task": 1,
+        "client": 1385,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1669,
+    "fields": {
+        "task": 1,
+        "client": 1386,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1670,
+    "fields": {
+        "task": 1,
+        "client": 1387,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1671,
+    "fields": {
+        "task": 1,
+        "client": 1388,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1672,
+    "fields": {
+        "task": 1,
+        "client": 1389,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1673,
+    "fields": {
+        "task": 1,
+        "client": 1390,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1674,
+    "fields": {
+        "task": 1,
+        "client": 1391,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1675,
+    "fields": {
+        "task": 1,
+        "client": 1392,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+},
+{
+    "model": "mailing.emailforsend",
+    "pk": 1676,
+    "fields": {
+        "task": 1,
+        "client": 1393,
+        "token": "qbv5yCpffpMNMzEo9xEdEeuOrSo"
+    }
+}
+]

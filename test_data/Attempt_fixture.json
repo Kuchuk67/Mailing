@@ -1,0 +1,24 @@
+[
+{
+    "model": "mailing.attempt",
+    "pk": 1,
+    "fields": {
+        "attempt_at": "2025-03-12T09:34:13.651Z",
+        "success": false,
+        "response": "0",
+        "task_send": 1,
+        "len_mail": 0
+    }
+},
+{
+    "model": "mailing.attempt",
+    "pk": 2,
+    "fields": {
+        "attempt_at": "2025-03-12T09:35:02.364Z",
+        "success": true,
+        "response": "1",
+        "task_send": 1,
+        "len_mail": 317
+    }
+}
+]

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% include 'menu.html' %}
+
+
+<div class="p-4">
+    <table  class="table table-striped">
+        <tr>
+                                <td><a href="{{ task.id }}">{{ task.name }}</a><br />{{ task.message }}</td>
+                                <td>{{ task.start_at | date:"d M Y" }}</td>
+                                <td>{{ task.end_at | date:"d M Y" }}</td>
+                                <td>{{ task.status }}</td>
+        </tr>
+    </table>
+    </div>
+
+</div>
+
+
+<div class="p-4">
+    <form method="POST">
+                    {% csrf_token %}
+                <p style="color: red">Точно хотите удалить запись: <b>{{ task.name }}</b></p>
+                <button type="submit" class="btn btn-primary">Удалить</button>
+                <a href="{% url 'mailing:tasks' %}" class="btn btn-secondary">Отмена</a>
+    </form>
+
+</div>
+
+{% endblock %}

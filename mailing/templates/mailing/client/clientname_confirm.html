@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% include 'menu.html' %}
+
+
+<div class="p-4">
+    <form method="POST">
+                    {% csrf_token %}
+                 <p style="color: red; font-size:36px;"><b> Точно хотите удалить все записи? </b></p>
+
+                <button type="submit" class="btn btn-primary">Удалить</button>
+                <a href="{% url 'mailing:clients' %}" class="btn btn-secondary">Отмена</a>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    {% include 'menu.html' %}
+
+<div class="fon">
+    <div class=" container-lg d-flex ">
+
+
+
+
+        <div class="col-md-6 p-3  justify-content-center">
+            <div class="">
+                <p><b>Название: {{ task.name }}</b></p>
+                <p>Содержание: {{ task.message }}</p>
+                <p>Начало: {{ task.start_at | date:"d M Y H:i" }}</p>
+                <p>Завершение: {{ task.end_at | date:"d M Y H:i" }}</p>
+                <p>Описание:  {% if task.description %}
+                                    {{ task.description | truncatechars:50 }}
+                                    {% endif %}
+                                </p>
+
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a href="{% url 'mailing:moderation_tasks' %}" class="btn btn-secondary">Отмена</a>
+
+            </form>
+        </div>
+        <div class="col-md-6 p-3 border">
+            <h3>Текст рассылки</h3>
+            <hr />
+                    {{ object.message.text_mail | safe }}
+
+        </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

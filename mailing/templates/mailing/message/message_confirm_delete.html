@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% include 'menu.html' %}
+
+
+<div class="p-4">
+    <div class="message_title"><h1>  {{ message.title_mail }} </h1></div>
+    <div class="block_mailing" style="padding: 15px; border: 1px solid #aaa;">
+        <div class="message_title">  {{ message.text_mail | safe }} </div>
+    </div>
+
+</div>
+
+
+<div class="p-4">
+    <form method="POST">
+                    {% csrf_token %}
+                <p style="color: red">Точно хотите удалить запись: <b>{{ message.title_mail }}</b></p>
+                <button type="submit" class="btn btn-primary">Удалить</button>
+                <a href="{% url 'mailing:messages' %}" class="btn btn-secondary">Отмена</a>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="fon">
+    <div class=" container-lg">
+
+        <h2>Профайл. Личные данные</h2>
+              <!--<form method="post">
+                 {% csrf_token %}
+                 {{ user_form.as_p }}
+                 {{ form.as_p }}
+                 <button class="btn btn-primary" type="submit">Сохранить</button>
+                 <a href="{% url 'catalog:product' %}" class="btn btn-secondary">Отмена</a>
+              </form>-->
+        <h5 class="card-title">
+                        {{ object }}
+                    </h5>
+                    <div class="card-text">
+                        <ul>
+                            <li>Имя: {{ object.username }}</li>
+                            <li>Страна: {{ object.country }}</li>
+                            <li>Аватарка: {{ object.avatar }}</li>
+
+                        </ul>
+                    <a href="{% url 'users:profile_edite'  %}" class="btn btn-sm btn-primary">Редактировать профиль</a>
+                    </div>
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}
