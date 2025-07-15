@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="fon">
+    <div class=" container-lg">
+        <div class="title  d-flex  flex-column justify-content-center">
+            <h2>Профайл. Личные данные</h2>
+              <h5 class="card-title">
+                        {{ object }}
+                    </h5>
+        </div>
+
+
+             <form method="post"  enctype="multipart/form-data" class="form_sm">
+                 {% csrf_token %}
+                 <p>Имя:
+                     {{ form.username }}
+                     {% if form.username.errors %}
+                        {% for error in form.username.errors %}
+		                    <div class="errorlist">• {{ error }}</div>
+                        {% endfor %}
+                     {% endif %}
+                 </p>
+
+
+
+                 <p>Страна:
+                 {{ form.country }}
+                 </p>
+                 <p>Телефон:
+                 {{ form.phone }}
+                 </p>
+                  {% if form.phone.errors %}
+                        {% for error in form.phone.errors %}
+                        <div class="errorlist">• {{ error }} </div>
+                        {% endfor %}
+                  {% endif %}
+                 <button class="btn btn-primary" type="submit">Сохранить</button>
+                 <a href="{% url 'mailing:tasks' %}" class="btn btn-secondary">Отмена</a>
+              </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

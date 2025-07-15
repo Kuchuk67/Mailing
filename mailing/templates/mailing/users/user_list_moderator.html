@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% include 'menu.html' %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Планировщик рассылок - модерация</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Email пользователя</th>
+
+                                <th>Имя пользователя</th>
+                                <th>Статус</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% include 'pagination.html' %}
+                            {% for user in users %}
+                            <tr>
+                                <td> <b> {{ user.email }} </b> </td>
+                                <td>{{ user.username }}</td>
+                                <td>
+
+                                        <form  method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="user" value="{{ user.id }}">
+                                            <button type="submit" style="border:none;  ">
+                                        {% if user.is_active %}
+                                            <img src="{% static 'img/ok.svg' %}" width="30px">
+                                        {% else %}
+                                            <img src="{% static 'img/block.svg' %}" width="30px">
+                                        {% endif%}
+                                            </button>
+                                        </form>
+
+                                </td>
+                                <td></td>
+                                <td></td>
+
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    {% endblock %}

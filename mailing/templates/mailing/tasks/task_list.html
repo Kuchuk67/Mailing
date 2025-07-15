@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% include 'menu.html' %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Планировщик рассылок</h1>
+                    <a class="btn btn-primary" href="{% url 'mailing:task_create' %} ">Добавить</a>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Наименование / Тема</th>
+                                <th>Время начала</th>
+                                <th>Время завершения</th>
+                                <th>Статус</th>
+                                <th>Адреса</th>
+                                <th>Комментарий</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% include 'pagination.html' %}
+                            {% for task in tasks %}
+                            <tr>
+                                <td><b><a href="{{ task.id }}">{{ task.name }}</a></b><br />{{ task.message }}</td>
+                                <td>{{ task.start_at | date:"d M Y H:i" }}</td>
+                                <td>{{ task.end_at | date:"d M Y H:i" }}</td>
+                                <td {% if task.status == 'created' %} class="bg_yel" {% endif %}
+                              {% if task.status == 'start' %} class="bg_rose" {% endif %}>{{ task.get_status_display }}</td>
+                                <td  style="text-align: center;">
+                                    {% for counter in clients_counter %}
+                                        {% if counter.task_id == task.id %}
+                                                 {{ counter.field_count }}
+                                        {% endif %}
+                                    {% endfor %}
+                                    <a class="min-botton btn btn-secondary" href="{{ task.id }}/clients/{% if page %}?page={{ page }}{% endif %}  ">
+
+                                     добавить
+                                </a></td>
+                                <td>{% if task.description %}
+                                    {{ task.description | truncatechars:50 }}
+                                    {% endif %}
+                                </td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    {% endblock %}

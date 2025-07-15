@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% include 'menu.html' %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Планировщик рассылок - модерация</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Наименование / Тема</th>
+                                 <th></th>
+                                <th>Время начала</th>
+                                <th>Время завершения</th>
+                                <th>Статус</th>
+                                <th>Адреса</th>
+                                <th>Комментарий</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {% include 'pagination.html' %}
+                            {% for task in tasks %}
+                            <tr>
+                                <td><b><a href="{{ task.id }}">{{ task.name }}</a></b><br />{{ task.message }}<br />{{ task.user }}</td>
+                                <td>
+                                    {% if  task.user.id  != user.id  %}
+                                        <form  method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="user" value="{{ task.user.id }}">
+                                            <button type="submit" style="border:none;  ">
+                                        {% if task.user.is_active %}
+                                            <img src="{% static 'img/ok.svg' %}" width="30px">
+                                        {% else %}
+                                            <img src="{% static 'img/block.svg' %}" width="30px">
+                                        {% endif%}
+                                            </button>
+                                        </form>
+                                    {% endif%}
+                                </td>
+                                <td>{{ task.start_at | date:"d M Y H:i" }}</td>
+                                <td>{{ task.end_at | date:"d M Y H:i" }}</td>
+                                <td {% if task.status == 'created' %} class="bg_yel"{% endif %}{% if task.status == 'start' %} class="bg_rose"{% endif %}>
+                                {{ task.get_status_display }}</td>
+                                <td  style="text-align: center;"><div class=" " >
+                                    {% for counter in clients_counter %}
+                                        {% if counter.task_id == task.id %}
+                                            {{ counter.field_count }}                                                                 {{                          vbvbvbvbvbvbv}}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div></td>
+                                <td>{% if task.description %}
+                                    {{ task.description | truncatechars:50 }}
+                                    {% endif %}
+                                </td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    {% endblock %}

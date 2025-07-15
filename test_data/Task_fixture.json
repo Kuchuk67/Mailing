@@ -1,0 +1,67 @@
+[
+{
+    "model": "mailing.task",
+    "pk": 1,
+    "fields": {
+        "name": "Рассылка №1",
+        "start_at": "2025-01-08T20:25:00Z",
+        "end_at": "2025-03-12T09:35:02.353Z",
+        "status": "end",
+        "message": 1,
+        "description": "Самая первая пробная рассылка",
+        "user": 3
+    }
+},
+{
+    "model": "mailing.task",
+    "pk": 2,
+    "fields": {
+        "name": "Продаем огурцы",
+        "start_at": "2025-02-07T05:54:00Z",
+        "end_at": "2025-02-20T05:55:00Z",
+        "status": "end",
+        "message": 2,
+        "description": null,
+        "user": 3
+    }
+},
+{
+    "model": "mailing.task",
+    "pk": 3,
+    "fields": {
+        "name": "Рассылка №3",
+        "start_at": "2025-01-29T05:55:00Z",
+        "end_at": "2025-02-20T05:55:00Z",
+        "status": "end",
+        "message": 2,
+        "description": null,
+        "user": 3
+    }
+},
+{
+    "model": "mailing.task",
+    "pk": 4,
+    "fields": {
+        "name": "Рассылка №4",
+        "start_at": "2025-01-28T05:55:00Z",
+        "end_at": "2025-02-21T05:55:00Z",
+        "status": "start",
+        "message": 3,
+        "description": null,
+        "user": 3
+    }
+},
+{
+    "model": "mailing.task",
+    "pk": 5,
+    "fields": {
+        "name": "Сила земли",
+        "start_at": "2025-02-28T07:38:00Z",
+        "end_at": "2025-03-08T07:38:00Z",
+        "status": "stop",
+        "message": 2,
+        "description": "Жесть! Подумать над темой...",
+        "user": 3
+    }
+}
+]

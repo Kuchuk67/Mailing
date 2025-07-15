@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    {% include 'menu.html' %}
+
+<div class="container">
+<div>
+    Загружено {{ count_all }} записей клиентов
+</div>
+<div>
+    Добавлено: {{ count_add }}
+    Обновлено: {{ count_update }}
+    Дублируются: {{ count_ok }}
+    Ошибок: {{ count_error }}
+</div>
+
+<a href="{% url 'mailing:clients' %}" class="m-3 btn btn-secondary">Вернутся к списку</a>
+</div>
+
+
+
+{% endblock %}

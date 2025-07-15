@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    {% include 'menu.html' %}
+
+<div class="fon">
+    <div class=" container-lg d-flex ">
+
+
+
+
+        <div class="col-md-6 p-3 d-flex justify-content-center">
+            <form method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+                <!--<div class="p-3">Имя задачи:
+                <h1>{{ form.name }}</h1>
+                </div>
+                <div class="p-3">Дата запуска:
+                {{ form.start_at }}
+                </div>
+
+                <div class="p-3">Дата завершения:
+                {{ form.end_at }}
+                </div>
+                <div class="p-3">Статус:
+                {{ form.status }}
+                </div>
+                <div class="p-3">Текст:
+                {{ form.message }}
+                </div>-->
+
+
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a href="{% url 'mailing:tasks' %}" class="btn btn-secondary">Отмена</a>
+                {% if task.id %}
+                <a class="btn btn-danger" href="{% url 'mailing:task_delete' task.id %} ">Удалить</a>
+                {% endif %}
+            </form>
+        </div>
+        <div class="col-md-6 p-3 border">
+            <h3>Текст рассылки</h3>
+            <hr />
+                    {{ object.message.text_mail | safe }}
+
+            <a href="{% url 'mailing:tasks' %}?send={{ task.id }}" class="btn btn-primary">Отправить сейчас</a>
+        </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
